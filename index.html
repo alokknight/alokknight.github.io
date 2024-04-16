@@ -76,7 +76,7 @@
           <div class="container-fluid position-relative g-lg-4">
             <div class="col-auto col-lg-2">
               <!-- Logo -->
-              <a class="logo" href="index.html" title="Alok">
+              <a class="logo" href="https://www.alokknight.com/" title="Alok">
                 <img src="images/alokknight-logo.png" alt="Alok" style="width: 100px; height: 100px;"/>
               </a>
               <!-- Logo End -->
@@ -221,7 +221,7 @@
                       <span class="typed"></span>
                       <span class="typed-cursor typed-cursor--blink">|</span>
                     </h2>
-
+                    <img id="butterfly" src="https://camo.githubusercontent.com/d590b911ade8c24a05e657f64f7b0da3c4863b4d4e0dcf34e12b5e7f1765183a/68747470733a2f2f6d656469612e74656e6f722e636f6d2f696d616765732f64646530306566393539663434646335323739373836666337663230666535622f74656e6f722e676966" alt="Image Description" class="image-button butterfly" style="width: 100px; height: auto;">
                     <p class="text-5 text-light mb-4">
                       based in Lucknow, India.
                     </p>
@@ -1805,6 +1805,88 @@
           });
         });
       });
+    </script>
+
+
+    <script>
+      const butterfly = document.getElementById('butterfly');
+      const distanceThreshold = 40; // Increase this value to set the distance threshold
+      const teaseThreshold = 5; // Decrease this value to set the tease threshold
+      let teaseCount = 0;
+      let timeoutId;
+
+      document.addEventListener('mousemove', (e) => {
+          clearTimeout(timeoutId); // Reset the timeout
+          const cursorX = e.clientX;
+          const cursorY = e.clientY;
+
+          const butterflyRect = butterfly.getBoundingClientRect();
+          const butterflyX = butterflyRect.left + butterflyRect.width / 2;
+          const butterflyY = butterflyRect.top + butterflyRect.height / 2;
+
+          const dx = cursorX - butterflyX;
+          const dy = cursorY - butterflyY;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < distanceThreshold) {
+              // Calculate the new position to move the butterfly away from the cursor
+              const newX = butterflyX - dx / distance * distanceThreshold;
+              const newY = butterflyY - dy / distance * distanceThreshold;
+
+              // Update the butterfly's position
+              butterfly.style.left = newX + 'px';
+              butterfly.style.top = newY + 'px';
+              teaseCount++;
+              if (teaseCount >= teaseThreshold) {
+                  // Trigger pop-up message
+                  alert("Please don't tease my butterfly too much!");
+                  // Reset the tease count after the pop-up
+                  teaseCount = 0;
+              }
+          } else {
+              // If cursor moves away, reset the tease count after 3 seconds
+              timeoutId = setTimeout(() => {
+                  teaseCount = 0;
+              }, 3000);
+          }
+      });
+
+      butterfly.addEventListener('touchmove', (e) => {
+          clearTimeout(timeoutId); // Reset the timeout
+          const touchX = e.touches[0].clientX;
+          const touchY = e.touches[0].clientY;
+
+          const butterflyRect = butterfly.getBoundingClientRect();
+          const butterflyX = butterflyRect.left + butterflyRect.width / 2;
+          const butterflyY = butterflyRect.top + butterflyRect.height / 2;
+
+          const dx = touchX - butterflyX;
+          const dy = touchY - butterflyY;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < distanceThreshold) {
+              // Calculate the new position to move the butterfly away from the cursor
+              const newX = butterflyX - dx / distance * distanceThreshold;
+              const newY = butterflyY - dy / distance * distanceThreshold;
+
+              // Update the butterfly's position
+              butterfly.style.left = newX + 'px';
+              butterfly.style.top = newY + 'px';
+              teaseCount++;
+              if (teaseCount >= teaseThreshold) {
+                  // Trigger pop-up message
+                  alert("Please don't tease my butterfly too much!");
+                  // Reset the tease count after the pop-up
+                  teaseCount = 0;
+              }
+          } else {
+              // If touch moves away, reset the tease count after 3 seconds
+              timeoutId = setTimeout(() => {
+                  teaseCount = 0;
+              }, 3000);
+          }
+      });
+
     </script>
 
 

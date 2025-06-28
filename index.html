@@ -77,14 +77,16 @@
           radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
           radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
           radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+        backdrop-filter: blur(100px);
       }
 
       /* Floating particles */
       .particle {
         position: absolute;
-        background: rgba(99, 102, 241, 0.3);
+        background: rgba(99, 102, 241, 0.4);
         border-radius: 50%;
         animation: float 20s infinite;
+        box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
       }
 
       @keyframes float {
@@ -148,6 +150,9 @@
         position: relative;
         z-index: 10;
         padding: 120px 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
       }
 
       .hero-title {
@@ -218,17 +223,22 @@
 
       @keyframes fly {
         0%, 100% {
-          transform: translateY(0) rotate(-5deg);
+          transform: translateY(0) rotate(-5deg) scale(1);
         }
         25% {
-          transform: translateY(-10px) rotate(5deg);
+          transform: translateY(-10px) rotate(5deg) scale(1.1);
         }
         50% {
-          transform: translateY(0) rotate(-5deg);
+          transform: translateY(0) rotate(-5deg) scale(1);
         }
         75% {
-          transform: translateY(-10px) rotate(5deg);
+          transform: translateY(-10px) rotate(5deg) scale(0.9);
         }
+      }
+
+      #butterfly:hover {
+        filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.8));
+        transform: scale(1.2);
       }
 
       /* Service Cards */
@@ -375,11 +385,20 @@
       /* Stats */
       .stat-card {
         text-align: center;
-        padding: 2rem;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       }
 
       .stat-number {
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: 800;
         background: var(--gradient);
         -webkit-background-clip: text;
@@ -388,8 +407,9 @@
 
       .stat-label {
         color: var(--text-secondary);
-        font-size: 1.1rem;
+        font-size: 1rem;
         margin-top: 0.5rem;
+        font-weight: 500;
       }
 
       /* CTA Button */
@@ -419,6 +439,21 @@
       /* Process Timeline */
       #process {
         background: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      #process::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: 
+          radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.03) 0%, transparent 50%),
+          radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+        pointer-events: none;
       }
 
       .timeline {
@@ -446,7 +481,7 @@
         top: 0;
         width: 2px;
         height: 0;
-        background: var(--gradient);
+        background: linear-gradient(180deg, rgba(99, 102, 241, 0.5) 0%, rgba(139, 92, 246, 0.5) 100%);
         transform: translateX(-50%);
         transition: height 2s ease;
       }
@@ -723,8 +758,12 @@
           display: none;
         }
         
-        .process-features {
-          grid-template-columns: 1fr;
+        .project-nav-buttons {
+          display: none;
+        }
+        
+        .scroll-instruction {
+          display: none;
         }
         
         .horizontal-scroll-wrapper {
@@ -891,7 +930,7 @@
         position: absolute;
         top: 0;
         bottom: 0;
-        width: 100px;
+        width: 50px;
         z-index: 5;
         pointer-events: none;
       }
@@ -913,13 +952,18 @@
         gap: 2rem;
         padding: 0 5%;
         min-height: 500px;
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         will-change: transform;
+        width: max-content;
+        transform: translateX(0);
       }
 
       .project-slide {
         flex: 0 0 auto;
         width: min(80%, 900px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .project-card-horizontal {
@@ -927,12 +971,14 @@
         border-radius: 20px;
         padding: 1.5rem;
         height: 100%;
+        min-height: 400px;
         max-height: 450px;
         display: flex;
         gap: 1.5rem;
         align-items: center;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
+        width: 100%;
       }
 
       .project-card-horizontal:hover {
@@ -1076,8 +1122,7 @@
       .scroll-hint {
         position: absolute;
         right: 2rem;
-        top: 40%;
-        transform: translateY(-50%);
+        bottom: 2rem;
         display: flex;
         align-items: center;
         gap: 1rem;
@@ -1085,15 +1130,68 @@
         font-weight: 600;
         animation: slideHint 2s ease-in-out infinite;
         z-index: 10;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: opacity 0.3s ease;
       }
 
-      @keyframes slideHint {
-        0%, 100% {
-          transform: translateY(-50%) translateX(0);
-        }
-        50% {
-          transform: translateY(-50%) translateX(10px);
-        }
+      .scroll-progress {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        height: 6px;
+        background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+        transition: width 0.3s ease;
+        z-index: 20;
+        box-shadow: 0 2px 15px rgba(99, 102, 241, 0.6);
+        border-radius: 0 3px 3px 0;
+      }
+
+      .project-nav-buttons {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+        pointer-events: none;
+        z-index: 10;
+      }
+
+      .project-nav-btn {
+        background: white;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        pointer-events: all;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-nav-btn:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: scale(1.1);
+      }
+
+      .project-nav-btn:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+
+      .project-nav-btn:disabled:hover {
+        background: white;
+        color: var(--primary-color);
+        transform: scale(1);
       }
 
 
@@ -1137,6 +1235,11 @@
       /* body.loading {
         overflow: hidden;
       } */
+
+      /* Ensure horizontal scroll doesn't cause page overflow */
+      body {
+        overflow-x: hidden;
+      }
     </style>
   </head>
 
@@ -1180,6 +1283,9 @@
             </li>
           </ul>
           <a href="https://alokknight.com/contact" class="cta-button">Start Project</a>
+          <div class="text-center mb-3">
+            <p class="text-primary fw-bold"><i class="fas fa-hand-point-down me-2 animate-bounce"></i><strong>Scroll here to navigate through projects</strong> <i class="fas fa-hand-point-down ms-2 animate-bounce"></i></p>
+          </div>
         </div>
       </div>
     </nav>
@@ -1187,6 +1293,8 @@
     <!-- Hero Section -->
     <section id="home" class="hero-section">
       <div class="animated-bg">
+        <!-- Dark overlay -->
+        <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.5);"></div>
         <!-- Floating particles -->
         <div class="particle" style="width: 6px; height: 6px; left: 10%; animation-delay: 0s;"></div>
         <div class="particle" style="width: 4px; height: 4px; left: 20%; animation-delay: 2s;"></div>
@@ -1211,39 +1319,43 @@
             <a href="#pricing" class="cta-button">View Packages</a>
             <a href="#portfolio" class="btn btn-outline-light btn-lg rounded-pill">See My Work</a>
           </div>
-          
-          <!-- Stats -->
-          <div class="row mt-5">
-            <div class="col-md-3 col-6">
-              <div class="stat-card">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Projects Completed</div>
-              </div>
-            </div>
-            <div class="col-md-3 col-6">
-              <div class="stat-card">
-                <div class="stat-number">200+</div>
-                <div class="stat-label">Happy Clients</div>
-              </div>
-            </div>
-            <div class="col-md-3 col-6">
-              <div class="stat-card">
-                <div class="stat-number">50+</div>
-                <div class="stat-label">AI Solutions</div>
-              </div>
-            </div>
-            <div class="col-md-3 col-6">
-              <div class="stat-card">
-                <div class="stat-number">98%</div>
-                <div class="stat-label">Client Satisfaction</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       
       <!-- Butterfly -->
-      <img id="butterfly" src="./images/butterfly.gif" alt="Butterfly" style="width: 100px; height: auto; position: absolute; top: 50%; left: 10%;">
+      <img id="butterfly" src="./images/butterfly.gif" alt="Butterfly" style="width: 100px; height: auto;">
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section bg-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-6">
+            <div class="stat-card">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Projects Completed</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-card">
+              <div class="stat-number">200+</div>
+              <div class="stat-label">Happy Clients</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-card">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">AI Solutions</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-card">
+              <div class="stat-number">98%</div>
+              <div class="stat-label">Client Satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Services Section -->
@@ -1800,6 +1912,9 @@
           <span>Scroll to explore</span>
           <i class="fas fa-arrow-right"></i>
         </div>
+        
+        <!-- Progress Bar -->
+        <div class="scroll-progress" style="width: 0%"></div>
       </div>
     </section>
 
@@ -1940,16 +2055,27 @@
         });
       });
 
-      // Butterfly movement with boundary checking
+      // Enhanced butterfly movement
       const butterfly = document.getElementById('butterfly');
       let mouseX = 0, mouseY = 0;
       let butterflyX = 100, butterflyY = 300;
+      let velocityX = 0, velocityY = 0;
       const speed = 0.05;
+      const randomSpeed = 0.02;
       let isScrolling = false;
+      let lastActivity = Date.now();
+      let isResting = false;
+      
+      // Random movement patterns
+      const patterns = ['circle', 'figure8', 'zigzag', 'hover'];
+      let currentPattern = 'hover';
+      let patternProgress = 0;
       
       document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
+        lastActivity = Date.now();
+        isResting = false;
       });
 
       // Add flying class during scroll
@@ -1957,6 +2083,8 @@
       window.addEventListener('scroll', () => {
         isScrolling = true;
         butterfly.classList.add('flying');
+        lastActivity = Date.now();
+        isResting = false;
         
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(() => {
@@ -1966,44 +2094,124 @@
       });
 
       function animateButterfly() {
-        const dx = mouseX - butterflyX;
-        const dy = mouseY - butterflyY;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+        const timeSinceActivity = Date.now() - lastActivity;
         
-        if (distance < 150 && !isScrolling) {
-          // Move away from cursor
-          butterflyX -= dx * speed;
-          butterflyY -= dy * speed;
-        } else if (!isScrolling) {
-          // Random movement
-          butterflyX += (Math.random() - 0.5) * 2;
-          butterflyY += (Math.random() - 0.5) * 2;
+        // If idle for more than 3 seconds, butterfly rests
+        if (timeSinceActivity > 3000 && !isResting) {
+          isResting = true;
+          currentPattern = patterns[Math.floor(Math.random() * patterns.length)];
         }
         
-        // Enhanced boundary checking to keep butterfly in view
+        if (isResting) {
+          // Autonomous movement patterns
+          patternProgress += 0.01;
+          
+          switch(currentPattern) {
+            case 'circle':
+              velocityX = Math.cos(patternProgress * 2) * 2;
+              velocityY = Math.sin(patternProgress * 2) * 2;
+              break;
+            case 'figure8':
+              velocityX = Math.sin(patternProgress) * 3;
+              velocityY = Math.sin(patternProgress * 2) * 2;
+              break;
+            case 'zigzag':
+              velocityX = Math.sin(patternProgress * 4) * 2;
+              velocityY = 1;
+              break;
+            case 'hover':
+              velocityX = Math.sin(patternProgress * 3) * 0.5;
+              velocityY = Math.cos(patternProgress * 2) * 0.5;
+              break;
+          }
+          
+          // Add some randomness
+          velocityX += (Math.random() - 0.5) * 0.5;
+          velocityY += (Math.random() - 0.5) * 0.5;
+        } else {
+          // React to mouse
+          const dx = mouseX - butterflyX;
+          const dy = mouseY - butterflyY;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < 150 && !isScrolling) {
+            // Flee from cursor
+            velocityX = -dx * speed;
+            velocityY = -dy * speed;
+            
+            // Add flutter effect
+            butterfly.style.transform = `rotate(${Math.sin(Date.now() * 0.01) * 10}deg)`;
+          } else {
+            // Slowly drift towards mouse
+            velocityX = dx * randomSpeed;
+            velocityY = dy * randomSpeed;
+            butterfly.style.transform = 'rotate(0deg)';
+          }
+        }
+        
+        // Apply velocity with damping
+        butterflyX += velocityX;
+        butterflyY += velocityY;
+        velocityX *= 0.95;
+        velocityY *= 0.95;
+        
+        // Enhanced boundary checking
         const margin = 100;
         const maxX = window.innerWidth - margin;
         const maxY = window.innerHeight - margin;
         
-        // If butterfly goes out of bounds, bring it back smoothly
+        // Bounce off edges
         if (butterflyX < margin) {
-          butterflyX = margin + Math.random() * 50;
+          butterflyX = margin;
+          velocityX = Math.abs(velocityX);
         } else if (butterflyX > maxX) {
-          butterflyX = maxX - Math.random() * 50;
+          butterflyX = maxX;
+          velocityX = -Math.abs(velocityX);
         }
         
         if (butterflyY < margin) {
-          butterflyY = margin + Math.random() * 50;
+          butterflyY = margin;
+          velocityY = Math.abs(velocityY);
         } else if (butterflyY > maxY) {
-          butterflyY = maxY - Math.random() * 50;
+          butterflyY = maxY;
+          velocityY = -Math.abs(velocityY);
         }
         
-        // Apply position with smooth transition
+        // Apply position
         butterfly.style.left = butterflyX + 'px';
         butterfly.style.top = butterflyY + 'px';
         
+        // Wing flapping based on movement speed
+        const movementSpeed = Math.sqrt(velocityX * velocityX + velocityY * velocityY);
+        butterfly.style.animationDuration = `${Math.max(0.3, 2 - movementSpeed * 0.1)}s`;
+        
+        // Add glow effect when moving fast
+        if (movementSpeed > 5) {
+          butterfly.style.filter = 'drop-shadow(0 0 20px rgba(99, 102, 241, 0.8))';
+        } else {
+          butterfly.style.filter = 'drop-shadow(0 0 10px rgba(99, 102, 241, 0.5))';
+        }
+        
         requestAnimationFrame(animateButterfly);
       }
+      
+      // Click to make butterfly do a loop
+      butterfly.addEventListener('click', () => {
+        velocityX = (Math.random() - 0.5) * 20;
+        velocityY = -15;
+        butterfly.style.transform = 'rotate(360deg) scale(1.5)';
+        setTimeout(() => {
+          butterfly.style.transform = 'rotate(0deg) scale(1)';
+        }, 500);
+      });
+      
+      // Double click to return to center
+      butterfly.addEventListener('dblclick', () => {
+        butterflyX = window.innerWidth / 2;
+        butterflyY = window.innerHeight / 2;
+        velocityX = 0;
+        velocityY = 0;
+      });
       
       // Reset butterfly position on window resize
       window.addEventListener('resize', () => {
@@ -2011,114 +2219,208 @@
         butterflyY = Math.min(butterflyY, window.innerHeight - 100);
       });
       
+      // Add some personality - butterfly occasionally does tricks
+      setInterval(() => {
+        if (isResting && Math.random() > 0.7) {
+          // Do a little spin
+          butterfly.style.transform = 'rotate(720deg)';
+          setTimeout(() => {
+            butterfly.style.transform = 'rotate(0deg)';
+          }, 1000);
+        }
+      }, 5000);
+      
       animateButterfly();
 
-      // Horizontal scroll functionality
-      const horizontalSection = document.querySelector('.horizontal-scroll-wrapper');
-      const horizontalContainer = document.querySelector('.horizontal-scroll-container');
-      const slides = document.querySelectorAll('.project-slide');
-      const scrollDots = document.querySelectorAll('.scroll-dot');
-      
-      let currentScroll = 0;
-      let maxScroll = 0;
-      let isHorizontalScrollActive = false;
-      
-      // Calculate max scroll
-      function calculateMaxScroll() {
-        const containerWidth = horizontalContainer.scrollWidth;
-        const viewportWidth = window.innerWidth;
-        maxScroll = containerWidth - viewportWidth + 100; // Add some padding
-      }
-      
-      // Initialize
-      calculateMaxScroll();
-      window.addEventListener('resize', calculateMaxScroll);
-      
-      // Smooth horizontal scroll
-      function updateHorizontalScroll(delta) {
-        currentScroll += delta * 0.8; // Adjusted for better control
-        currentScroll = Math.max(0, Math.min(currentScroll, maxScroll));
-        horizontalContainer.style.transform = `translateX(-${currentScroll}px)`;
+      // Horizontal scroll functionality - Fixed version
+      document.addEventListener('DOMContentLoaded', () => {
+        const portfolioSection = document.querySelector('#portfolio');
+        const scrollWrapper = document.querySelector('.horizontal-scroll-wrapper');
+        const scrollContainer = document.querySelector('.horizontal-scroll-container');
+        const projectSlides = document.querySelectorAll('.project-slide');
+        const dots = document.querySelectorAll('.scroll-dot');
         
-        // Update dots based on visible project
-        const slideWidth = slides[0].offsetWidth + 32; // width + gap
-        const activeIndex = Math.min(Math.floor((currentScroll + slideWidth/2) / slideWidth), slides.length - 1);
-        scrollDots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === activeIndex);
-        });
-      }
-      
-      // Handle scroll for horizontal section
-      let scrollTimeout;
-      
-      function handleScroll(e) {
-        const rect = horizontalSection.getBoundingClientRect();
-        const isInView = rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5;
-        
-        if (isInView && currentScroll < maxScroll && e.deltaY > 0) {
-          // Scrolling down and haven't reached the end
-          e.preventDefault();
-          updateHorizontalScroll(e.deltaY);
-          isHorizontalScrollActive = true;
-          
-          // Clear existing timeout
-          clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(() => {
-            isHorizontalScrollActive = false;
-          }, 100);
-        } else if (isInView && currentScroll > 0 && e.deltaY < 0) {
-          // Scrolling up and not at the beginning
-          e.preventDefault();
-          updateHorizontalScroll(e.deltaY);
-          isHorizontalScrollActive = true;
-          
-          clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(() => {
-            isHorizontalScrollActive = false;
-          }, 100);
+        if (!scrollContainer || projectSlides.length === 0) {
+          console.error('Project scroll elements not found');
+          return;
         }
-        // If at the end or beginning, allow normal vertical scroll
-      }
-      
-      // Add wheel event listener
-      window.addEventListener('wheel', handleScroll, { passive: false });
-      
-      // Handle dot clicks
-      scrollDots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          const slideWidth = slides[0].offsetWidth + 32;
-          currentScroll = index * slideWidth;
-          currentScroll = Math.min(currentScroll, maxScroll);
-          horizontalContainer.style.transform = `translateX(-${currentScroll}px)`;
-          updateHorizontalScroll(0); // Just update dots
-        });
-      });
-      
-      // Touch support for mobile
-      let touchStartX = 0;
-      let touchStartY = 0;
-      let touchStartScroll = 0;
-      
-      horizontalSection.addEventListener('touchstart', (e) => {
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
-        touchStartScroll = currentScroll;
-      });
-      
-      horizontalSection.addEventListener('touchmove', (e) => {
-        const touchX = e.touches[0].clientX;
-        const touchY = e.touches[0].clientY;
-        const deltaX = touchStartX - touchX;
-        const deltaY = touchStartY - touchY;
         
-        // If horizontal swipe is stronger than vertical
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        let scrollPosition = 0;
+        let maxScrollPosition = 0;
+        let isHorizontallyScrolling = false;
+        let scrollLocked = false;
+        
+        // Calculate maximum scroll distance
+        const updateMaxScroll = () => {
+          const containerTotalWidth = scrollContainer.scrollWidth;
+          const viewportWidth = scrollWrapper.offsetWidth;
+          maxScrollPosition = Math.max(0, containerTotalWidth - viewportWidth);
+        };
+        
+        updateMaxScroll();
+        window.addEventListener('resize', updateMaxScroll);
+        
+        // Apply scroll position
+        const applyScroll = (newPosition) => {
+          scrollPosition = Math.max(0, Math.min(newPosition, maxScrollPosition));
+          scrollContainer.style.transform = `translateX(-${scrollPosition}px)`;
+          
+          // Update active dot
+          if (projectSlides.length > 0 && dots.length > 0) {
+            const slideWidth = projectSlides[0].offsetWidth + 32; // including gap
+            const currentIndex = Math.round(scrollPosition / slideWidth);
+            
+            dots.forEach((dot, idx) => {
+              dot.classList.toggle('active', idx === currentIndex);
+            });
+          }
+          
+          // Hide/show scroll hint
+          const hint = document.querySelector('.scroll-hint');
+          if (hint) {
+            hint.style.opacity = scrollPosition >= maxScrollPosition - 10 ? '0' : '1';
+          }
+        };
+        
+        // Main scroll handler
+        const handleWheelScroll = (event) => {
+          if (!portfolioSection || scrollLocked) return;
+          
+          const sectionBounds = portfolioSection.getBoundingClientRect();
+          const wrapperBounds = scrollWrapper.getBoundingClientRect();
+          
+          // Check if we're in the portfolio section
+          const isInSection = sectionBounds.top < window.innerHeight && sectionBounds.bottom > 0;
+          const isInScrollArea = wrapperBounds.top < window.innerHeight * 0.7 && wrapperBounds.bottom > window.innerHeight * 0.3;
+          
+          if (isInSection && isInScrollArea) {
+            const scrollDelta = event.deltaY;
+            
+            // Determine if we should handle horizontal scroll
+            const shouldScrollHorizontally = 
+              (scrollDelta > 0 && scrollPosition < maxScrollPosition) || 
+              (scrollDelta < 0 && scrollPosition > 0);
+            
+            if (shouldScrollHorizontally) {
+              event.preventDefault();
+              event.stopPropagation();
+              
+              // Apply horizontal scroll
+              const scrollSpeed = 1.2;
+              const newPosition = scrollPosition + (scrollDelta * scrollSpeed);
+              applyScroll(newPosition);
+              
+              // Lock vertical scroll briefly
+              isHorizontallyScrolling = true;
+              scrollLocked = true;
+              
+              setTimeout(() => {
+                scrollLocked = false;
+                isHorizontallyScrolling = false;
+              }, 50);
+              
+              return false;
+            }
+          }
+        };
+        
+        // Attach scroll listener
+        window.addEventListener('wheel', handleWheelScroll, { passive: false });
+        scrollWrapper.addEventListener('wheel', handleWheelScroll, { passive: false });
+        
+        // Dot navigation
+        dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            if (projectSlides.length > 0) {
+              const slideWidth = projectSlides[0].offsetWidth + 32;
+              const targetPosition = index * slideWidth;
+              applyScroll(targetPosition);
+            }
+          });
+        });
+        
+        // Touch/swipe support
+        let touchStart = { x: 0, y: 0 };
+        let touchInitialScroll = 0;
+        
+        scrollWrapper.addEventListener('touchstart', (e) => {
+          touchStart.x = e.touches[0].clientX;
+          touchStart.y = e.touches[0].clientY;
+          touchInitialScroll = scrollPosition;
+        });
+        
+        scrollWrapper.addEventListener('touchmove', (e) => {
+          const touchCurrent = {
+            x: e.touches[0].clientX,
+            y: e.touches[0].clientY
+          };
+          
+          const deltaX = touchStart.x - touchCurrent.x;
+          const deltaY = touchStart.y - touchCurrent.y;
+          
+          // If horizontal movement is greater
+          if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
+            e.preventDefault();
+            const newPosition = touchInitialScroll + deltaX;
+            applyScroll(newPosition);
+          }
+        });
+        
+        // Mouse drag support
+        let mouseDown = false;
+        let mouseStart = 0;
+        let mouseInitialScroll = 0;
+        
+        scrollWrapper.addEventListener('mousedown', (e) => {
+          mouseDown = true;
+          mouseStart = e.clientX;
+          mouseInitialScroll = scrollPosition;
+          scrollWrapper.style.cursor = 'grabbing';
           e.preventDefault();
-          currentScroll = touchStartScroll + deltaX;
-          currentScroll = Math.max(0, Math.min(currentScroll, maxScroll));
-          horizontalContainer.style.transform = `translateX(-${currentScroll}px)`;
-          updateHorizontalScroll(0); // Just update dots
-        }
+        });
+        
+        window.addEventListener('mousemove', (e) => {
+          if (!mouseDown) return;
+          
+          const deltaX = mouseStart - e.clientX;
+          const newPosition = mouseInitialScroll + deltaX;
+          applyScroll(newPosition);
+        });
+        
+        window.addEventListener('mouseup', () => {
+          mouseDown = false;
+          scrollWrapper.style.cursor = 'grab';
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+          const sectionBounds = portfolioSection.getBoundingClientRect();
+          const isInView = sectionBounds.top < window.innerHeight && sectionBounds.bottom > 0;
+          
+          if (isInView) {
+            if (e.key === 'ArrowRight') {
+              e.preventDefault();
+              applyScroll(scrollPosition + 200);
+            } else if (e.key === 'ArrowLeft') {
+              e.preventDefault();
+              applyScroll(scrollPosition - 200);
+            }
+          }
+        });
+        
+        // Test button for debugging
+        const testBtn = document.createElement('button');
+        testBtn.textContent = 'Test Scroll →';
+        testBtn.style.cssText = 'position: absolute; top: 10px; right: 10px; z-index: 100; padding: 10px; background: #6366f1; color: white; border: none; border-radius: 5px; cursor: pointer;';
+        testBtn.onclick = () => {
+          console.log('Test scroll clicked. Current:', scrollPosition, 'Max:', maxScrollPosition);
+          applyScroll(scrollPosition + 200);
+        };
+        scrollWrapper.appendChild(testBtn);
+        
+        // Initialize and log status
+        applyScroll(0);
+        console.log('Horizontal scroll initialized. Projects:', projectSlides.length, 'Max scroll:', maxScrollPosition);
       });
 
       // Number counter animation

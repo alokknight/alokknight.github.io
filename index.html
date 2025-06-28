@@ -1,1671 +1,1135 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="images/alokknight-logo.png" rel="icon" />
-    <title>Alok's Portfolio </title>
+    <title>Alok Knight - AI Solutions & Development Services</title>
     <meta
       name="description"
-      content="Alok is responsive bootstrap 5 one page personal portfolio html template."
+      content="Premium AI solutions, custom software development, and digital transformation services. Specializing in AI agents, LLM integration, SAAS platforms, and enterprise automation."
     />
-    <meta name="author" content="alokknight.com" />
-    <meta name="author" content="alok patel" />
+    <meta name="author" content="Alok Knight" />
+    <meta name="keywords" content="AI development, LLM integration, chatbots, SAAS development, automation, web development, mobile apps" />
+    
     <!-- Web Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-    <!-- Stylesheet
-    ============================== -->
     <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
-    <!-- Custom Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
-    <!-- Colors Css -->
-    <link id="color-switcher" type="text/css" rel="stylesheet" href="#" />
-
-    <!-- Owl Carousel CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.theme.default.min.css"
-    />
-  </head>
-
-  <body data-bs-spy="scroll" data-bs-target="#header-nav" data-bs-offset="0">
-    <!-- Preloader -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- Owl Carousel JS -->
-    <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
-
-    <div class="preloader" style="display: none">
-      <div class="lds-ellipsis" style="display: none">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <!-- Preloader End -->
-
-    <!-- Document Wrapper
-    =============================== -->
-    <div id="main-wrapper">
-      <!-- Header
-      ============================ -->
-      <header id="header" class="sticky-top-slide">
-        <!-- Navbar -->
-        <nav
-          class="primary-menu navbar navbar-expand-lg navbar-dark bg-transparent border-bottom-0"
-        >
-          <div class="container-fluid position-relative g-lg-4">
-            <div class="col-auto col-lg-2">
-              <!-- Logo -->
-              <a class="logo" href="https://www.alokknight.com/" title="Alok">
-                <img src="images/alokknight-logo.png" alt="Alok" style="width: 100px; height: 100px;"/>
-              </a>
-              <!-- Logo End -->
-            </div>
-            <div class="col col-lg-8 navbar-accordion">
-              <button
-                class="navbar-toggler ms-auto"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#header-nav"
-              >
-                <span></span><span></span><span></span>
-              </button>
-              <div
-                id="header-nav"
-                class="collapse navbar-collapse justify-content-center"
-              >
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link smooth-scroll active" href="#home"
-                      >Home</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link smooth-scroll" href="#about">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link smooth-scroll" href="#services"
-                      >What I Do</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link smooth-scroll" href="#resume">Resume</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link smooth-scroll" href="#projects"
-                      >Projects</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link smooth-scroll" href="#testimonial"
-                      >Client</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link smooth-scroll" href="#contact"
-                      >Contact</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-auto col-lg-2 d-flex justify-content-end">
-              <ul class="social-icons social-icons-light">
-                <li class="social-icons-twitter">
-                  <a
-                    data-bs-toggle="tooltip"
-                    href="http://www.twitter.com/aalokknight"
-                    target="_blank"
-                    title=""
-                    data-bs-original-title="Twitter"
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                </li>
-                <li class="social-icons-facebook">
-                  <a
-                    data-bs-toggle="tooltip"
-                    href="http://www.facebook.com/aalokknight"
-                    target="_blank"
-                    title=""
-                    data-bs-original-title="Facebook"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                </li>
-                <li class="social-icons-linkedin">
-                  <a
-                    data-bs-toggle="tooltip"
-                    href="http://www.linkedin.com/in/alokknight"
-                    target="_blank"
-                    title=""
-                    data-bs-original-title="Dribbble"
-                    ><i class="fab fa-linkedin"></i
-                  ></a>
-                </li>
-                <li class="social-icons-github">
-                  <a
-                    data-bs-toggle="tooltip"
-                    href="http://www.github.com/alokknight"
-                    target="_blank"
-                    title=""
-                    data-bs-original-title="Dribbble"
-                    ><i class="fab fa-github"></i
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <!-- Navbar End -->
-      </header>
-      <!-- Header End -->
-
-      <!-- Content
-      ============================================= -->
-      <div id="content" role="main">
-        <!-- Intro
-        ============================================= -->
-        <section id="home">
-          <div class="hero-wrap">
-            <div class="hero-mask opacity-8 bg-dark"></div>
-            <div
-              class="hero-bg parallax"
-              style="
-                background-image: url('images/intro-bg.jpg');
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-position: center 0px;
-              "
-            ></div>
-
-            <div class="hero-content section d-flex min-vh-100">
-              <div class="container my-auto">
-                <div class="row">
-                  <div class="col-12 text-center">
-                    <div class="typed-strings" style="display: none">
-                      <p>I'm Alok Patel</p>
-                      <p>I'm a Freelancer.</p>
-                      <p>I'm a Photographer.</p>
-                      <p>I'm a Designer.</p>
-                    </div>
-                    <p class="text-7 fw-500 text-white mb-2 mb-md-3">Welcome</p>
-                    <h2
-                      id="typed-element"
-                      class="text-16 fw-600 text-white text-center mb-2 mb-md-3"
-                    >
-                      <span class="typed"></span>
-                      <span class="typed-cursor typed-cursor--blink">|</span>
-                    </h2>
-                    <img id="butterfly" src="./images/butterfly.gif" alt="Image Description" class="image-button butterfly" style="width: 100px; height: auto;">
-                    <p class="text-5 text-light mb-4">
-                      based in Lucknow, India.
-                    </p>
-                    <a
-                      href="#contact"
-                      class="btn btn-outline-primary rounded-pill shadow-none smooth-scroll mt-2"
-                      >Hire Me</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <a
-                href="#about"
-                class="scroll-down-arrow text-white smooth-scroll"
-                ><span class="animated"><i class="fa fa-chevron-down"></i></span
-              ></a>
-            </div>
-          </div>
-        </section>
-        <!-- Intro end -->
-
-        <!-- About
-        ============================================= -->
-        <section id="about" class="section">
-          <div class="container">
-            <!-- Heading -->
-            <div class="position-relative d-flex text-center mb-5">
-              <h2
-                class="text-24 text-light opacity-4 text-uppercase fw-600 w-100 mb-0"
-              >
-                About Me
-              </h2>
-              <p
-                class="text-9 text-dark fw-600 position-absolute w-100 align-self-center lh-base mb-0"
-              >
-                Know Me More<span
-                  class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"
-                ></span>
-              </p>
-            </div>
-            <!-- Heading end-->
-            <div class="row gy-5">
-              <div class="col-lg-7 col-xl-8 text-center text-lg-start">
-                <h2 class="text-7 fw-600 mb-3">
-                  I'm <span class="text-primary">Alok Patel,</span> a Full Stack
-                  Developer
-                </h2>
-
-                <p>
-                  Explore my digital profile to unveil a skilled Full Stack Developer, adept at creating fluid web experiences. Proficient in React, Python, and API development, I fuse innovation and precision to redefine the digital frontier.
-                </p>
-                <p>
-                  Committed to delivering projects on time and within budget, we prioritize meeting client requirements. Renowned for our precision and commitment to excellence, we turn visions into reality with innovative solutions, consistently exceeding expectations.
-                </p>
-              </div>
-              <div class="col-lg-5 col-xl-4">
-                <div class="ps-lg-4">
-                  <ul class="list-style-2">
-                    <li class="">
-                      <span class="fw-600 me-2">Name:</span>Alok Patel
-                    </li>
-                    <li class="">
-                      <span class="fw-600 me-2">Email:</span
-                      ><a href="mailto:alokpatel885@gmail.com">alokpatel885@gmail.com</a>
-                    </li>
-                    <li class=""><span class="fw-600 me-2">Age:</span>25</li>
-                    <li class="border-0">
-                      <span class="fw-600 me-2">From:</span>Lucknow,
-                      UP, India
-                    </li>
-                  </ul>
-                  <a href="http://www.alokknight.com/resume/" class="btn btn-primary rounded-pill"
-                    >Download CV</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="brands-grid separator-border mt-5">
-              <div class="row">
-                <div class="col-6 col-md-3">
-                  <div class="featured-box text-center">
-                    <h4 class="text-12 text-muted mb-0">
-                      <span class="counter" data-from="0" data-to="5">5</span
-                      >+
-                    </h4>
-                    <p class="mb-0">Years Experiance</p>
-                  </div>
-                </div>
-                <div class="col-6 col-md-3">
-                  <div class="featured-box text-center">
-                    <h4 class="text-12 text-muted mb-0">
-                      <span class="counter" data-from="0" data-to="250"
-                        >100</span
-                      >+
-                    </h4>
-                    <p class="mb-0">Happy Clients</p>
-                  </div>
-                </div>
-                <div class="col-6 col-md-3">
-                  <div class="featured-box text-center">
-                    <h4 class="text-12 text-muted mb-0">
-                      <span class="counter" data-from="0" data-to="80"
-                        >120</span
-                      >+
-                    </h4>
-                    <p class="mb-0">Projects Done</p>
-                  </div>
-                </div>
-                <div class="col-6 col-md-3">
-                  <div class="featured-box text-center">
-                    <h4 class="text-12 text-muted mb-0">
-                      <span class="counter" data-from="0" data-to="38">38</span>
-                    </h4>
-                    <p class="mb-0">Get Awards</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- About end -->
-
-        <!-- Services
-        ============================================= -->
-        <section id="services" class="section bg-light">
-          <div class="container">
-            <!-- Heading -->
-            <div class="position-relative d-flex text-center mb-5">
-              <h2
-                class="text-24 text-light opacity-4 text-uppercase fw-600 w-100 mb-0"
-              >
-                Services
-              </h2>
-              <p
-                class="text-9 text-dark fw-600 position-absolute w-100 align-self-center lh-base mb-0"
-              >
-                What I Do?<span
-                  class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"
-                ></span>
-              </p>
-            </div>
-            <!-- Heading end-->
-
-            <div class="row">
-              <div class="col-lg-11 mx-auto">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="featured-box style-3 mb-5">
-                      <div
-                        class="featured-box-icon text-primary bg-white shadow-sm rounded"
-                      >
-                        <i class="fas fa-palette"></i>
-                      </div>
-                      <h3>API Development</h3>
-                      <p class="mb-0">
-                        I architect APIs, enhancing website functionality by seamlessly connecting and managing data interactions for a responsive and streamlined user experience.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="featured-box style-3 mb-5">
-                      <div
-                        class="featured-box-icon text-primary bg-white shadow-sm rounded"
-                      >
-                        <i class="fas fa-desktop"></i>
-                      </div>
-                      <h3>Web Design</h3>
-                      <p class="mb-0">
-                        I craft captivating web designs, transforming ideas into visually stunning and user-friendly interfaces for an engaging online presence.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="featured-box style-3 mb-5">
-                      <div
-                        class="featured-box-icon text-primary bg-white shadow-sm rounded"
-                      >
-                        <i class="fas fa-pencil-ruler"></i>
-                      </div>
-                      <h3>UI/UX Design</h3>
-                      <p class="mb-0">
-                        I specialize in creating intuitive and visually appealing UI/UX designs, ensuring seamless and delightful user experiences that elevate digital interactions.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="featured-box style-3 mb-5">
-                      <div
-                        class="featured-box-icon text-primary bg-white shadow-sm rounded"
-                      >
-                        <i class="fas fa-paint-brush"></i>
-                      </div>
-                      <h3>App Design &amp; Develop</h3>
-                      <p class="mb-0">
-                        Crafting cutting-edge app designs and development solutions, delivering user-centric interfaces and robust functionalities for a standout mobile experience.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="featured-box style-3 mb-5 mb-md-0">
-                      <div
-                        class="featured-box-icon text-primary bg-white shadow-sm rounded"
-                      >
-                        <i class="fas fa-chart-area"></i>
-                      </div>
-                      <h3>Data Analysis</h3>
-                      <p class="mb-0">
-                        Leveraging analytical expertise to extract actionable insights from data, driving informed decision-making and enhancing organizational performance.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="featured-box style-3 mb-0">
-                      <div
-                        class="featured-box-icon text-primary bg-white shadow-sm rounded"
-                      >
-                        <i class="fas fa-bullhorn"></i>
-                      </div>
-                      <h3>SEO Marketing</h3>
-                      <p class="mb-0">
-                        Strategically optimizing digital presence to elevate online visibility and engagement, maximizing reach and impact through effective SEO marketing techniques.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Services end -->
-
-        <!-- Resume
-        ============================================= -->
-        <section id="resume" class="section">
-          <div class="container">
-            <!-- Heading -->
-            <div class="position-relative d-flex text-center mb-5">
-              <h2
-                class="text-24 text-light opacity-4 text-uppercase fw-600 w-100 mb-0"
-              >
-                Summary
-              </h2>
-              <p
-                class="text-9 text-dark fw-600 position-absolute w-100 align-self-center lh-base mb-0"
-              >
-                Resume<span
-                  class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"
-                ></span>
-              </p>
-            </div>
-            <!-- Heading end-->
-
-            <div class="row gx-5">
-
-              <!-- My Experience -->
-              <div class="col-md-6">
-                <h2 class="text-6 fw-600 mb-4">My Experience</h2>
-                <div class="bg-white border rounded p-4 mb-4">
-                  <p class="badge bg-primary text-2 fw-400">Nov 2022 - July 2023</p>
-                  <h3 class="text-5">Freelancer Software Engineer</h3>
-                  <p class="text-danger">Alokknight.com</p>
-                  <p class="mb-0">
-                    Successfully completed 120+ diverse projects spanning website development, automation, API integrations, chatbot creation, CI/CD pipeline setups (Jenkins/GitHub/GitLab), cloud solutions (AWS, Azure, Google Cloud, Serverless architectures), containerization (Docker, Kubernetes), DevOps tools (Terraform, Ansible), cloud databases (RDS, Cloud SQL), security implementations (OAuth, JWT), and data science projects including text summarization, semantic analysis, and data visualization dashboards.
-                  </p>
-                </div>
-                <div class="bg-white border rounded p-4 mb-4">
-                  <p class="badge bg-primary text-2 fw-400">Nov 2022 - July 2023</p>
-                  <h3 class="text-5">Associate Software Engineer</h3>
-                  <p class="text-danger">Ericsson India Pvt. Ltd.</p>
-                  <p class="mb-0">
-                    Architected efficient Spring Boot API, cutting response time by 40% and elevating system uptime by 99.9%. Improved code quality by 10% through rigorous testing and analysis, benefiting 200M+ AT&T users.
-                  </p>
-                </div>
-                <div class="bg-white border rounded p-4 mb-4">
-                  <p class="badge bg-primary text-2 fw-400">May 2022 - Oct 2022</p>
-                  <h3 class="text-5">Software Engineer Intern</h3>
-                  <p class="text-danger">Ericsson India Pvt. Ltd.</p>
-                  <p class="mb-0">
-                    Optimized calling and data plans for 250M+ users, boosting system efficiency by 15%. Contributed to seamless customer care integration in a 10-member team.
-                  </p>
-                </div>
-                <div class="bg-white border rounded p-4 mb-4">
-                  <p class="badge bg-primary text-2 fw-400">2019 - 2022</p>
-                  <h3 class="text-5">FreeLancer</h3>
-                  <p class="text-danger">alokknight.com</p>
-                  <p class="mb-0">
-                    Worked on My own website.
-                  </p>
-                </div>
-              </div>
-                            <!-- My Education -->
-                            <div class="col-md-6">
-                              <h2 class="text-6 fw-600 mb-4">My Education</h2>
-                              <div class="bg-white border rounded p-4 mb-4">
-                                <p class="badge bg-primary text-2 fw-400">2018 - 2022</p>
-                                <h3 class="text-5">Btech in Computer Science & Engineering</h3>
-                                <p class="text-danger">MMMUT, Gorakhpur</p>
-                                <p class="mb-0">
-                                  Computer Science graduate with a focus on software engineering and algorithmic problem-solving. Proven ability to design and develop efficient systems for enhanced user experiences.
-                                </p>
-                              </div>
-                              <div class="bg-white border rounded p-4 mb-4">
-                                <p class="badge bg-primary text-2 fw-400">2015 - 2017</p>
-                                <h3 class="text-5">Intermediate</h3>
-                                <p class="text-danger">JKGPSVMIC, Sitapur</p>
-                                <p class="mb-0">
-                                  I achieved an intermediate qualification with an outstanding 90.4% grade, securing the top position in my city Laharpur.
-                                </p>
-                              </div>
-                              <div class="bg-white border rounded p-4 mb-4">
-                                <p class="badge bg-primary text-2 fw-400">2013 - 2015</p>
-                                <h3 class="text-5">High School</h3>
-                                <p class="text-danger">JKGPSVMIC, Sitapur</p>
-                                <p class="mb-0">
-                                  Achieved the top position in my high school class, demonstrating consistent dedication and excellence in academics.
-                                </p>
-                              </div>
-                            </div>
-
-            </div>
-            <!-- My Skills -->
-            <h2 class="text-6 fw-600 mt-4 mb-4">My Skills</h2>
-            <div class="row gx-5">
-              <div class="col-md-6">
-                <p class="text-dark fw-500 text-start mb-2">
-                  API Development <span class="float-end">95%</span>
-                </p>
-                <div class="progress progress-sm mb-4">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    style="width: 95%"
-                    aria-valuenow="95"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-                <p class="text-dark fw-500 text-start mb-2">
-                  Django <span class="float-end">98%</span>
-                </p>
-                <div class="progress progress-sm mb-4">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    style="width: 98%"
-                    aria-valuenow="98"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-                <p class="text-dark fw-500 text-start mb-2">
-                 Selenium <span class="float-end">95%</span>
-                </p>
-                <div class="progress progress-sm mb-4">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    style="width: 95%"
-                    aria-valuenow="95"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-                <p class="text-dark fw-500 text-start mb-2">
-                  Django Rest Framework<span class="float-end">95%</span>
-                </p>
-                <div class="progress progress-sm mb-4">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    style="width: 95%"
-                    aria-valuenow="95"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-                <p class="text-dark fw-500 text-start mb-2">
-                  Web Design <span class="float-end">100%</span>
-                </p>
-                <div class="progress progress-sm mb-4">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    style="width: 100%"
-                    aria-valuenow="100"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-                <p class="text-dark fw-500 text-start mb-2">
-                  HTML/CSS <span class="float-end">100%</span>
-                </p>
-                <div class="progress progress-sm mb-4">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    style="width: 100%"
-                    aria-valuenow="100"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <p class="text-dark fw-500 text-start mb-2">
-                  React.JS / Node.js / Veu.js / Angular.js <span class="float-end">95%</span>
-                </p>
-                <div class="progress progress-sm mb-4">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    style="width: 95%"
-                    aria-valuenow="95"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-                <p class="text-dark fw-500 text-start mb-2">
-                  Bootstrap / Figma <span class="float-end">100%</span>
-                </p>
-                <div class="progress progress-sm mb-4">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    style="width: 100%"
-                    aria-valuenow="100"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-                <p class="text-dark fw-500 text-start mb-2">
-                  Python <span class="float-end">100%</span>
-                </p>
-                <div class="progress progress-sm mb-4">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    style="width: 100%"
-                    aria-valuenow="100"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-                <p class="text-dark fw-500 text-start mb-2">
-                  Machine Learning / Deep Learning /  <span class="float-end">95%</span>
-                </p>
-                <div class="progress progress-sm mb-4">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    style="width: 95%"
-                    aria-valuenow="95"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-                <p class="text-dark fw-500 text-start mb-2">
-                  JavaScript / Jquery  <span class="float-end">97%</span>
-                </p>
-                <div class="progress progress-sm mb-4">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    style="width: 97%"
-                    aria-valuenow="97"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-                <p class="text-dark fw-500 text-start mb-2">
-                  Java / Spring Boot / Junit5 / Mockito <span class="float-end">95%</span>
-                </p>
-                <div class="progress progress-sm mb-4">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    style="width: 95%"
-                    aria-valuenow="95"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="text-center mt-5">
-              <a
-                href="http://www.alokknight.com/resume/"
-                class="btn btn-outline-secondary rounded-pill shadow-none"
-                >Download CV
-                <span class="ms-1"><i class="fas fa-download"></i></span
-              ></a>
-            </div>
-          </div>
-        </section>
-        <!-- Resume end -->
-
-
-
-
-<!--  Projects Section -->
-<section id= "projects" class="s1 p-4">
-  <div class="main-container">
-    <h3 style="text-align: center;"> </h3>
-    <div class="position-relative d-flex text-center mb-5">
-      <h2
-        class="text-24 text-light opacity-4 text-uppercase fw-600 w-100 mb-0"
-      >
-        Portfolio
-      </h2>
-      <p
-        class="text-9 text-dark fw-600 position-absolute w-100 align-self-center lh-base mb-0"
-      >
-        Projects I completed<span
-          class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"
-        ></span>
-      </p>
-    </div>
-
-    <div class="project-wrapper row">
-
-      <!-- Project 1: Event Management System -->
-      <div class="col-md-4">
-        <div class="project border rounded mb-3">
-          <img class="thumbnail rounded p-1" src="./images/demo/event.gif">
-          <div class="project-preview p-1">
-            <h6 class="project-title">Event Management System</h6>
-            <button type="button" onclick="window.location.href='https://github.com/alokknight/aayojan'" class="btn btn-sm btn-outline-secondary">Git</button>
-            <button type="button" onclick="window.location.href='http://www.alokknight.com/aayojan/'" class="btn btn-sm btn-outline-secondary">View</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 2: Dynamic Website -->
-      <div class="col-md-4">
-        <div class="project border rounded mb-3">
-          <img class="thumbnail rounded p-1" src="./images/demo/dynamicWebsite.gif">
-          <div class="project-preview p-1">
-            <h6 class="project-title">Dynamic Website</h6>
-            <button type="button" onclick="window.location.href='https://blog.bharatstore.org'" class="btn btn-sm btn-outline-secondary">View</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3: Car Price Prediction -->
-      <div class="col-md-4">
-        <div class="project border rounded mb-3">
-          <img class="thumbnail rounded p-1" src="./images/demo/ML1.gif">
-          <div class="project-preview p-1">
-            <h6 class="project-title">Car Price Prediction</h6>
-            <button type="button" onclick="window.location.href='https://carprice.alokknight.com/'" class="btn btn-sm btn-outline-secondary">View</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 6: API Integration -->
-      <div class="col-md-4">
-        <div class="project border rounded mb-3">
-          <img class="thumbnail rounded p-1" src="./images/demo/api.gif">
-          <div class="project-preview p-1">
-            <h6 class="project-title">API Integration</h6>
-            <button type="button" onclick="window.location.href='https://www.alokknight.com'" class="btn btn-sm btn-outline-secondary">View</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3: Wishky Quality CheckUp -->
-      <div class="col-md-4">
-        <div class="project border rounded mb-3">
-          <img class="thumbnail rounded rounded p-1" src="./images/demo/jack.gif">
-          <div class="project-preview p-1">
-            <h6 class="project-title">Wishky Quality CheckUp</h6>
-            <button type="button" onclick="window.location.href='https://www.alokknight.com'" class="btn btn-sm btn-outline-secondary">View</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 4: Text Analysis -->
-      <div class="col-md-4">
-        <div class="project border rounded mb-3">
-          <img class="thumbnail rounded p-1" src="./images/demo/TextAnalysis.gif">
-          <div class="project-preview p-1">
-            <h6 class="project-title">Text Analysis</h6>
-            <button type="button" onclick="window.location.href='https://www.alokknight.com/textanalysis'" class="btn btn-sm btn-outline-secondary">View</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 5: Hostel Management System -->
-      <div class="col-md-4">
-        <div class="project border rounded mb-3">
-          <img class="thumbnail rounded p-1" src="./images/demo/hostel.gif">
-          <div class="project-preview p-1">
-            <h6 class="project-title">Hostel Management System</h6>
-            <button type="button" onclick="window.location.href='https://www.alokknight.com/'" class="btn btn-sm btn-outline-secondary">View</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Portfolio end -->
-
-
-
-
-
-
-
-
-
-        <!-- Testimonial
-        ============================================= -->
-        <section id="testimonial" class="section">
-          <div class="container">
-            <!-- Heading -->
-            <div class="position-relative d-flex text-center mb-5">
-              <h2
-                class="text-24 text-light opacity-4 text-uppercase fw-600 w-100 mb-0"
-              >
-                Testimonial
-              </h2>
-              <p
-                class="text-9 text-dark fw-600 position-absolute w-100 align-self-center lh-base mb-0"
-              >
-                Client Speak<span
-                  class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"
-                ></span>
-              </p>
-            </div>
-            <!-- Heading end-->
-
-            <div
-              class="owl-carousel owl-theme owl-loaded owl-drag"
-              data-loop="true"
-              data-nav="false"
-              data-autoplay="false"
-              data-margin="25"
-              data-stagepadding="0"
-              data-slideby="1"
-              data-items-xs="1"
-              data-items-sm="1"
-              data-items-md="1"
-              data-items-lg="2"
-            >
-              <div class="owl-stage-outer">
-                <div
-                  class="owl-stage"
-                  style="
-                    transform: translate3d(-2164px, 0px, 0px);
-                    transition: all 0s ease 0s;
-                    width: 4328px;
-                  "
-                >
-                  <div
-                    class="owl-item cloned"
-                    style="width: 516px; margin-right: 25px"
-                  >
-                    <div class="item">
-                      <div class="bg-light rounded p-5">
-                        <div class="d-flex align-items-center mt-auto mb-4">
-                          <img
-                            class="img-fluid rounded-circle border d-inline-block w-auto"
-                            src="images/testimonial/client-sm-1.jpg"
-                            alt=""
-                          />
-                          <p class="ms-3 mb-0">
-                            <strong class="d-block text-dark fw-600"
-                              >Shubham Gupta</strong
-                            >
-                            <span class="text-muted fw-500"
-                              >CEO of LeadNex.AI  from Delhi</span
-                            >
-                          </p>
-                        </div>
-                        <p class="text-dark fw-500 mb-4">
-                          “I am happy Working with printing and typesetting
-                          industry. Quidam lisque persius interesset his et, in
-                          quot quidam persequeris essent possim iriure.”
-                        </p>
-                        <span class="text-2">
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="owl-item cloned"
-                    style="width: 516px; margin-right: 25px"
-                  >
-                    <div class="item">
-                      <div class="bg-light rounded p-5">
-                        <div class="d-flex align-items-center mt-auto mb-4">
-                          <img
-                            class="img-fluid rounded-circle border d-inline-block w-auto"
-                            src="images/testimonial/client-sm-1.jpg"
-                            alt=""
-                          />
-                          <p class="ms-3 mb-0">
-                            <strong class="d-block text-dark fw-600"
-                              >Chris Tom</strong
-                            >
-                            <span class="text-muted fw-500">User from UK</span>
-                          </p>
-                        </div>
-                        <p class="text-dark fw-500 mb-4">
-                          “I have used them twice now. Good rates, very
-                          efficient service and priced simply dummy text of the
-                          printing and typesetting industry quidam interesset
-                          his et. Excellent.”
-                        </p>
-                        <span class="text-2">
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="owl-item"
-                    style="width: 516px; margin-right: 25px"
-                  >
-                    <div class="item">
-                      <div class="bg-light rounded p-5">
-                        <div class="d-flex align-items-center mt-auto mb-4">
-                          <img
-                            class="img-fluid rounded-circle border d-inline-block w-auto"
-                            src="images/testimonial/client-sm-1.jpg"
-                            alt=""
-                          />
-                          <p class="ms-3 mb-0">
-                            <strong class="d-block text-dark fw-600"
-                              >Dennis Jacques</strong
-                            >
-                            <span class="text-muted fw-500">User from USA</span>
-                          </p>
-                        </div>
-                        <p class="text-dark fw-500 mb-4">
-                          “Only trying it out since a few days. But up to now
-                          excellent. Seems to work flawlessly. priced simply
-                          dummy text of the printing and typesetting industry.”
-                        </p>
-                        <span class="text-2">
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="owl-item"
-                    style="width: 516px; margin-right: 25px"
-                  >
-                    <div class="item">
-                      <div class="bg-light rounded p-5">
-                        <div class="d-flex align-items-center mt-auto mb-4">
-                          <img
-                            class="img-fluid rounded-circle border d-inline-block w-auto"
-                            src="images/testimonial/client-sm-1.jpg"
-                            alt=""
-                          />
-                          <p class="ms-3 mb-0">
-                            <strong class="d-block text-dark fw-600"
-                              >Jay Shah</strong
-                            >
-                            <span class="text-muted fw-500"
-                              >Founder at Icomatic Pvt Ltd</span
-                            >
-                          </p>
-                        </div>
-                        <p class="text-dark fw-500 mb-4">
-                          "Easy to use, reasonably priced simply dummy text of
-                          the printing and typesetting industry. Quidam lisque
-                          persius interesset his et, in quot quidam possim
-                          iriure.”
-                        </p>
-                        <span class="text-2">
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="owl-item active"
-                    style="width: 516px; margin-right: 25px"
-                  >
-                    <div class="item">
-                      <div class="bg-light rounded p-5">
-                        <div class="d-flex align-items-center mt-auto mb-4">
-                          <img
-                            class="img-fluid rounded-circle border d-inline-block w-auto"
-                            src="images/testimonial/client-sm-1.jpg"
-                            alt=""
-                          />
-                          <p class="ms-3 mb-0">
-                            <strong class="d-block text-dark fw-600"
-                              >Patrick Cary</strong
-                            >
-                            <span class="text-muted fw-500"
-                              >Freelancer from USA</span
-                            >
-                          </p>
-                        </div>
-                        <p class="text-dark fw-500 mb-4">
-                          “I am happy Working with printing and typesetting
-                          industry. Quidam lisque persius interesset his et, in
-                          quot quidam persequeris essent possim iriure.”
-                        </p>
-                        <span class="text-2">
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="owl-item"
-                    style="width: 516px; margin-right: 25px"
-                  >
-                    <div class="item">
-                      <div class="bg-light rounded p-5">
-                        <div class="d-flex align-items-center mt-auto mb-4">
-                          <img
-                            class="img-fluid rounded-circle border d-inline-block w-auto"
-                            src="images/testimonial/client-sm-1.jpg"
-                            alt=""
-                          />
-                          <p class="ms-3 mb-0">
-                            <strong class="d-block text-dark fw-600"
-                              >Chris Tom</strong
-                            >
-                            <span class="text-muted fw-500">User from UK</span>
-                          </p>
-                        </div>
-                        <p class="text-dark fw-500 mb-4">
-                          “I have used them twice now. Good rates, very
-                          efficient service and priced simply dummy text of the
-                          printing and typesetting industry quidam interesset
-                          his et. Excellent.”
-                        </p>
-                        <span class="text-2">
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Testimonial end -->
-
-        <!-- Contact Me
-        ============================================= -->
-        <section id="contact" class="section bg-light">
-          <div class="container">
-            <!-- Heading -->
-            <div class="position-relative d-flex text-center mb-5">
-              <h2
-                class="text-24 text-light opacity-4 text-uppercase fw-600 w-100 mb-0"
-              >
-                Contact
-              </h2>
-              <p
-                class="text-9 text-dark fw-600 position-absolute w-100 align-self-center lh-base mb-0"
-              >
-                Get in Touch<span
-                  class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"
-                ></span>
-              </p>
-            </div>
-            <!-- Heading end-->
-            <div class="row gy-5">
-              <div
-                class="col-md-4 col-xl-3 order-1 order-md-0 text-center text-md-start"
-              >
-                <h2 class="mb-3 text-5 text-uppercase">Address</h2>
-                <p class="text-3 mb-4">
-                  Laharpur<br />
-                  Sitapur, 261135<br />
-                  UP, India
-                </p>
-                <p class="text-3 mb-1">
-                  <span class="text-primary text-4 me-2"
-                    ><i class="fas fa-phone"></i></span
-                  >+91 7897867722
-                </p>
-                <p class="text-3 mb-1">
-                  <span class="text-primary text-4 me-2"
-                    ><i class="fas fa-fax"></i></span
-                  >+91 6386866361
-                </p>
-                <p class="text-3 mb-4">
-                  <span class="text-primary text-4 me-2"
-                    ><i class="fas fa-envelope"></i></span
-                  >alokpatel885@gmail.com
-                </p>
-                <h2 class="mb-3 text-5 text-uppercase">Follow Me</h2>
-                <ul
-                  class="social-icons justify-content-center justify-content-md-start"
-                >
-                  <li class="social-icons-github">
-                    <a
-                      data-bs-toggle="tooltip"
-                      href="http://www.github.com/alokknight/"
-                      target="_blank"
-                      aria-label="Github"
-                      ><i class="fab fa-github"></i
-                    ></a>
-                  </li>
-                  <li class="social-icons-twitter">
-                    <a
-                      data-bs-toggle="tooltip"
-                      href="https://twitter.com/aalokknight/"
-                      target="_blank"
-                      aria-label="Twitter"
-                      ><i class="fab fa-twitter"></i
-                    ></a>
-                  </li>
-                  <li class="social-icons-facebook">
-                    <a
-                      data-bs-toggle="tooltip"
-                      href="http://www.facebook.com/aalokknight/"
-                      target="_blank"
-                      aria-label="Facebook"
-                      ><i class="fab fa-facebook-f"></i
-                    ></a>
-                  </li>
-                  <li class="social-icons-google">
-                    <a
-                      data-bs-toggle="tooltip"
-                      href="http://www.google.com/"
-                      target="_blank"
-                      aria-label="Google"
-                      ><i class="fab fa-google"></i
-                    ></a>
-                  </li>
-                  <li class="social-icons-youtube">
-                    <a
-                      data-bs-toggle="tooltip"
-                      href="http://www.youtube.com/@alokknight"
-                      target="_blank"
-                      aria-label="Youtube"
-                      ><i class="fab fa-youtube"></i
-                    ></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-md-8 col-xl-9 order-0 order-md-1">
-                <h2
-                  class="mb-3 text-5 text-uppercase text-center text-md-start"
-                >
-                  Send us a note
-                </h2>
-                <form id="contact-form" action="https://alokknight.com/contact/" method="post">
-                  <div class="row g-4">
-                    <div class="col-xl-6">
-                      <input
-                        name="name"
-                        type="text"
-                        class="form-control"
-                        required=""
-                        placeholder="Name"
-                      />
-                    </div>
-                    <div class="col-xl-6">
-                      <input
-                        name="email"
-                        type="email"
-                        class="form-control"
-                        required=""
-                        placeholder="Email"
-                      />
-                    </div>
-                    <div class="col">
-                      <textarea
-                        name="form-message"
-                        class="form-control"
-                        rows="5"
-                        required=""
-                        placeholder="Tell us more about your needs........"
-                      ></textarea>
-                    </div>
-                  </div>
-
-                  <p class="text-center mt-4 mb-0">
-                    <button
-                      id="submit-btn"
-                      class="btn btn-primary rounded-pill d-inline-flex"
-                      type="submit"
-                    >
-                      Send Message
-                    </button>
-                  </p>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Contact Me end -->
-      </div>
-      <!-- Content end -->
-
-      <!-- Footer
-      ============================================= -->
-      <footer id="footer" class="section">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 text-center text-lg-start">
-              <p class="mb-3 mb-lg-0">
-                Copyright © 2022 <a href="#" class="fw-500">Alok</a>. All Rights
-                Reserved.
-              </p>
-            </div>
-            <div class="col-lg-6">
-              <ul
-                class="nav nav-separator justify-content-center justify-content-lg-end"
-              >
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    data-bs-toggle="modal"
-                    data-bs-target="#terms-policy"
-                    href="#"
-                    >Terms &amp; Policy</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    data-bs-toggle="modal"
-                    data-bs-target="#disclaimer"
-                    href="#"
-                    >Disclaimer</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
-      <!-- Footer end -->
-    </div>
-    <!-- Document Wrapper end -->
-
-    <!-- Back to Top
-    ============================================= -->
-    <a
-      id="back-to-top"
-      class="rounded-circle"
-      data-bs-toggle="tooltip"
-      href="javascript:void(0)"
-      aria-label="Back to Top"
-      style="display: none"
-      ><i class="fa fa-chevron-up"></i
-    ></a>
-
-    <!-- Terms & Policy Modal
-    ================================== -->
-    <div id="terms-policy" class="modal fade" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Terms &amp; Policy</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body p-4">
-            <h3 class="mb-3 mt-4 mt-4">Terms of Use</h3>
-            <p>
-              This website's terms of use outline the rules and regulations for the use of this website.
-            </p>
-            <h5 class="text-4 mt-4">
-              Part I – Information Collection and Control
-            </h5>
-            <p>
-              We collect and control information in accordance with the industry standards, ensuring your privacy and security.
-            </p>
-            <h5 class="text-4 mt-4">
-              Part II – Information Processing on Your Behalf
-            </h5>
-            <p>
-              We process information on your behalf, following industry guidelines to protect your data.
-            </p>
-            <h5 class="text-4 mt-4">Part III – General</h5>
-            <p>
-              These general terms cover various aspects of using this website, providing clarity on the usage policies.
-            </p>
-            <h3 class="mb-3 mt-4">Privacy Policy</h3>
-            <p>
-              Our privacy policy explains how we use and protect any information that you provide while using this website.
-            </p>
-            <ol class="lh-lg">
-              <li>
-                We prioritize the security and confidentiality of your data.
-              </li>
-              <li>
-                Your information is processed and stored securely.
-              </li>
-              <li>
-                We do not share your information with third parties without your consent.
-              </li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Terms & Policy Modal End -->
-
-    <!-- Disclaimer Modal
-    ================================== -->
-    <div id="disclaimer" class="modal fade" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Disclaimer</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body p-4">
-            <p>
-              The content presented on this portfolio website is intended for informational purposes only. Any views or opinions represented on the site are personal and belong solely to the portfolio owner and do not represent those of any employer or organization.
-            </p>
-            <ul class="lh-lg">
-              <li>
-                The portfolio owner makes no representations as to the accuracy, completeness, suitability, or validity of any information on this site and will not be liable for any errors, omissions, or delays in this information or any losses, injuries, or damages arising from its display or use.
-              </li>
-              <li>
-                All information is provided on an as-is basis. It is the reader's responsibility to verify any information before relying on it.
-              </li>
-              <li>
-                The portfolio owner reserves the right to change the focus of the website, shut it down, or change the terms of use at any time without prior notice.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Disclaimer Modal End -->
-
-
-      <!-- Styles Switcher -->
-    <div id="styles-switcher" class="right">
-      <h2 class="text-3">Color Switcher</h2>
-      <hr />
-      <ul>
-        <li
-          class="indigo"
-          data-bs-toggle="tooltip"
-          data-path="css/color-indigo.css"
-          aria-label="Indigo"
-        ></li>
-        <li
-          class="blue"
-          data-bs-toggle="tooltip"
-          data-path="css/color-blue.css"
-          aria-label="Blue"
-        ></li>
-        <li
-          class="purple"
-          data-bs-toggle="tooltip"
-          data-path="css/color-purple.css"
-          aria-label="Purple"
-        ></li>
-        <li
-          class="cyan"
-          data-bs-toggle="tooltip"
-          data-path="css/color-cyan.css"
-          aria-label="Cyan"
-        ></li>
-        <li
-          class="red"
-          data-bs-toggle="tooltip"
-          data-path="css/color-red.css"
-          aria-label="Red"
-        ></li>
-        <li
-          class="pink"
-          data-bs-toggle="tooltip"
-          data-path="css/color-pink.css"
-          aria-label="Pink"
-        ></li>
-        <li
-          class="green"
-          data-bs-toggle="tooltip"
-          data-path="css/color-green.css"
-          aria-label="Green"
-        ></li>
-        <li
-          class="yellow"
-          data-bs-toggle="tooltip"
-          data-path="css/color-yellow.css"
-          aria-label="Yellow"
-        ></li>
-        <li
-          class="orange"
-          data-bs-toggle="tooltip"
-          data-path="css/color-orange.css"
-          aria-label="Orange"
-        ></li>
-        <li
-          class="brown"
-          data-bs-toggle="tooltip"
-          data-path="css/color-brown.css"
-          aria-label="Brown"
-        ></li>
-      </ul>
-      <button
-        class="btn btn-dark btn-sm w-100 border-0 fw-400 rounded-0 shadow-none"
-        id="reset-color"
-      >
-        Reset Default Teal
-      </button>
-      <button class="btn switcher-toggle"><i class="fas fa-cog"></i></button>
-    </div>
-    <!-- Styles Switcher End -->
-
-    <!-- JavaScript -->
-
-    <!-- Style Switcher -->
-    <script src="js/switcher.min.js"></script>
-    <!-- Custom Script -->
-    <script src="js/theme.js"></script>
-
-    <script>
-      var options = {
-        strings: ["I'm Alok Patel", "I'm a Java Developer","I'm React Developer","I'm Django Developer","I'm a Freelancer."],
-        typeSpeed: 100,
-        backSpeed: 100,
-        loop: true,
-        showCursor: true,
-      };
-
-      var typed = new Typed("#typed-element .typed", options);
-    </script>
+    <!-- Custom Styles -->
     <style>
-      .owl-nav {
-        display: none !important;
+      :root {
+        --primary-color: #6366f1;
+        --secondary-color: #8b5cf6;
+        --dark-bg: #0f172a;
+        --light-bg: #f8fafc;
+        --text-primary: #1e293b;
+        --text-secondary: #64748b;
+        --accent: #10b981;
+        --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       }
-    </style>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
-
-    <script>
-      // Initialize Isotope after your portfolio items have loaded
-      $(document).ready(function () {
-        // Init Isotope
-        var $grid = $('.portfolio-filter').isotope({
-          itemSelector: '.col-sm-6',
-          layoutMode: 'fitRows'
-        });
-
-        // Filter items on click
-        $('.portfolio-menu').on('click', 'a', function (e) {
-          e.preventDefault();
-          var filterValue = $(this).attr('data-filter');
-          $grid.isotope({ filter: filterValue });
-        });
-
-        // Add active class to current filter
-        $('.portfolio-menu').on('click', 'a', function () {
-          $(this).addClass('active').siblings().removeClass('active');
-        });
-      });
-    </script>
-
-    <script>
-      $(document).ready(function () {
-        $('.owl-carousel').owlCarousel({
-          dots: true,
-          nav: false, // Disable default navigation
-        });
-      });
-    </script>
-
-    <script>
-      document.querySelectorAll('.smooth-scroll').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });
-        });
-      });
-    </script>
-
-
-    <script>
-      const butterfly = document.getElementById('butterfly');
-      const distanceThreshold = 40; // Increase this value to set the distance threshold
-      const teaseThreshold = 5; // Decrease this value to set the tease threshold
-      let teaseCount = 0;
-      let timeoutId;
-
-      document.addEventListener('mousemove', (e) => {
-          clearTimeout(timeoutId); // Reset the timeout
-          const cursorX = e.clientX;
-          const cursorY = e.clientY;
-
-          const butterflyRect = butterfly.getBoundingClientRect();
-          const butterflyX = butterflyRect.left + butterflyRect.width / 2;
-          const butterflyY = butterflyRect.top + butterflyRect.height / 2;
-
-          const dx = cursorX - butterflyX;
-          const dy = cursorY - butterflyY;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < distanceThreshold) {
-              // Calculate the new position to move the butterfly away from the cursor
-              const newX = butterflyX - dx / distance * distanceThreshold;
-              const newY = butterflyY - dy / distance * distanceThreshold;
-
-              // Update the butterfly's position
-              butterfly.style.left = newX + 'px';
-              butterfly.style.top = newY + 'px';
-              teaseCount++;
-              if (teaseCount >= teaseThreshold) {
-                  // Trigger pop-up message
-                  alert("Please don't tease my butterfly too much!");
-                  // Reset the tease count after the pop-up
-                  teaseCount = 0;
-              }
-          } else {
-              // If cursor moves away, reset the tease count after 3 seconds
-              timeoutId = setTimeout(() => {
-                  teaseCount = 0;
-              }, 3000);
-          }
-      });
-
-      butterfly.addEventListener('touchmove', (e) => {
-          clearTimeout(timeoutId); // Reset the timeout
-          const touchX = e.touches[0].clientX;
-          const touchY = e.touches[0].clientY;
-
-          const butterflyRect = butterfly.getBoundingClientRect();
-          const butterflyX = butterflyRect.left + butterflyRect.width / 2;
-          const butterflyY = butterflyRect.top + butterflyRect.height / 2;
-
-          const dx = touchX - butterflyX;
-          const dy = touchY - butterflyY;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < distanceThreshold) {
-              // Calculate the new position to move the butterfly away from the cursor
-              const newX = butterflyX - dx / distance * distanceThreshold;
-              const newY = butterflyY - dy / distance * distanceThreshold;
-
-              // Update the butterfly's position
-              butterfly.style.left = newX + 'px';
-              butterfly.style.top = newY + 'px';
-              teaseCount++;
-              if (teaseCount >= teaseThreshold) {
-                  // Trigger pop-up message
-                  alert("Please don't tease my butterfly too much!");
-                  // Reset the tease count after the pop-up
-                  teaseCount = 0;
-              }
-          } else {
-              // If touch moves away, reset the tease count after 3 seconds
-              timeoutId = setTimeout(() => {
-                  teaseCount = 0;
-              }, 3000);
-          }
-      });
-
-    </script>
-
-
-
-
-    <style type="text/css" data-typed-js-css="true">
-      .project-preview{
-
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      .project{
-        border:1px solid var(--borderColor);
-        -webkit-box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
-        -moz-box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
-        box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
+
+      body {
+        font-family: 'Inter', sans-serif;
+        color: var(--text-primary);
+        overflow-x: hidden;
       }
-      .thumbnail{
-        display: block;
+
+      /* Animated Background */
+      .hero-section {
+        position: relative;
+        min-height: 100vh;
+        background: var(--dark-bg);
+        overflow: hidden;
+      }
+
+      .animated-bg {
+        position: absolute;
         width: 100%;
-        height:180px;
-        object-fit: cover;
-      }
-      .main-container{
-        margin: 0 auto;
+        height: 100%;
+        background: linear-gradient(45deg, #0f172a 0%, #1e293b 100%);
       }
 
-      .typed-cursor {
-        opacity: 1;
+      .animated-bg::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: 
+          radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
       }
-      .typed-cursor.typed-cursor--blink {
-        animation: typedjsBlink 0.7s infinite;
-        -webkit-animation: typedjsBlink 0.7s infinite;
-        animation: typedjsBlink 0.7s infinite;
+
+      /* Floating particles */
+      .particle {
+        position: absolute;
+        background: rgba(99, 102, 241, 0.3);
+        border-radius: 50%;
+        animation: float 20s infinite;
       }
-      @keyframes typedjsBlink {
-        50% {
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0) translateX(0) scale(1);
           opacity: 0;
         }
-      }
-      @-webkit-keyframes typedjsBlink {
-        0% {
+        10% {
           opacity: 1;
         }
-        50% {
-          opacity: 0;
+        90% {
+          opacity: 1;
         }
         100% {
+          transform: translateY(-100vh) translateX(100px) scale(0.5);
+        }
+      }
+
+      /* Navigation */
+      .navbar {
+        background: rgba(15, 23, 42, 0.8) !important;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      .navbar.scrolled {
+        background: rgba(15, 23, 42, 0.95) !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-link {
+        color: #e2e8f0 !important;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-color) !important;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--primary-color);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 80%;
+      }
+
+      /* Hero Content */
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        padding: 120px 0;
+      }
+
+      .hero-title {
+        font-size: 4rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+        animation: fadeInUp 1s ease;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
           opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        color: #cbd5e1;
+        margin-bottom: 2rem;
+        animation: fadeInUp 1s ease 0.2s both;
+      }
+
+      .hero-description {
+        font-size: 1.1rem;
+        color: #94a3b8;
+        max-width: 600px;
+        margin: 0 auto 3rem;
+        animation: fadeInUp 1s ease 0.4s both;
+      }
+
+      /* Butterfly */
+      #butterfly {
+        position: fixed;
+        z-index: 1000;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.5));
+      }
+
+      /* Service Cards */
+      .service-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: var(--gradient);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .service-card:hover::before {
+        transform: translateX(0);
+      }
+
+      .service-icon {
+        width: 80px;
+        height: 80px;
+        background: var(--gradient);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+        margin-bottom: 1.5rem;
+      }
+
+      /* Pricing Cards */
+      .pricing-card {
+        background: white;
+        border-radius: 20px;
+        padding: 3rem 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        position: relative;
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+
+      .pricing-card.featured {
+        transform: scale(1.05);
+        box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+      }
+
+      .pricing-card.featured::before {
+        content: 'MOST POPULAR';
+        position: absolute;
+        top: 20px;
+        right: -30px;
+        background: var(--primary-color);
+        color: white;
+        padding: 5px 40px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        transform: rotate(45deg);
+      }
+
+      .pricing-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .pricing-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .pricing-price {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .pricing-duration {
+        color: var(--text-secondary);
+        font-size: 1rem;
+      }
+
+      .pricing-features {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+      }
+
+      .pricing-features li {
+        padding: 0.75rem 0;
+        display: flex;
+        align-items: center;
+        color: var(--text-secondary);
+      }
+
+      .pricing-features li i {
+        color: var(--accent);
+        margin-right: 0.75rem;
+        font-size: 1.25rem;
+      }
+
+      /* Tech Stack */
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+
+      .tech-badge {
+        background: rgba(99, 102, 241, 0.1);
+        color: var(--primary-color);
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .tech-badge:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      /* Stats */
+      .stat-card {
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 800;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .stat-label {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+      }
+
+      /* CTA Button */
+      .cta-button {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: var(--gradient);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        color: white;
+      }
+
+      /* Section spacing */
+      .section {
+        padding: 5rem 0;
+      }
+
+      /* Process Timeline */
+      .timeline {
+        position: relative;
+        padding: 2rem 0;
+      }
+
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--primary-color);
+        transform: translateX(-50%);
+      }
+
+      .timeline-item {
+        position: relative;
+        padding: 2rem 0;
+      }
+
+      .timeline-content {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        width: 45%;
+        position: relative;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content {
+        margin-left: auto;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        background: var(--primary-color);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 0 4px white, 0 0 0 6px var(--primary-color);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+        
+        .pricing-card.featured {
+          transform: scale(1);
+        }
+        
+        .timeline::before {
+          left: 20px;
+        }
+        
+        .timeline-content {
+          width: calc(100% - 60px);
+          margin-left: 60px !important;
+        }
+        
+        .timeline-dot {
+          left: 20px;
+        }
+      }
+
+      /* Smooth scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Loading animation */
+      .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--dark-bg);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .loader {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(99, 102, 241, 0.1);
+        border-top-color: var(--primary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
         }
       }
     </style>
+  </head>
+
+  <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="images/alokknight-logo.png" alt="Alok Knight" style="width: 60px; height: 60px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#expertise">Expertise</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#process">Process</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <a href="https://alokknight.com/contact" class="cta-button">Start Project</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="animated-bg">
+        <!-- Floating particles -->
+        <div class="particle" style="width: 6px; height: 6px; left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="width: 4px; height: 4px; left: 20%; animation-delay: 2s;"></div>
+        <div class="particle" style="width: 8px; height: 8px; left: 30%; animation-delay: 4s;"></div>
+        <div class="particle" style="width: 5px; height: 5px; left: 40%; animation-delay: 6s;"></div>
+        <div class="particle" style="width: 7px; height: 7px; left: 50%; animation-delay: 8s;"></div>
+        <div class="particle" style="width: 4px; height: 4px; left: 60%; animation-delay: 10s;"></div>
+        <div class="particle" style="width: 6px; height: 6px; left: 70%; animation-delay: 12s;"></div>
+        <div class="particle" style="width: 8px; height: 8px; left: 80%; animation-delay: 14s;"></div>
+        <div class="particle" style="width: 5px; height: 5px; left: 90%; animation-delay: 16s;"></div>
+      </div>
+      
+      <div class="hero-content">
+        <div class="container text-center text-white">
+          <h1 class="hero-title">AI-Powered Solutions</h1>
+          <p class="hero-subtitle">Transform Your Business with Cutting-Edge Technology</p>
+          <p class="hero-description">
+            Specializing in AI integration, custom LLM solutions, intelligent chatbots, 
+            and enterprise-grade software development. Let's build the future together.
+          </p>
+          <div class="d-flex gap-3 justify-content-center">
+            <a href="#pricing" class="cta-button">View Packages</a>
+            <a href="#portfolio" class="btn btn-outline-light btn-lg rounded-pill">See My Work</a>
+          </div>
+          
+          <!-- Stats -->
+          <div class="row mt-5">
+            <div class="col-md-3 col-6">
+              <div class="stat-card">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Projects Completed</div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-card">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Happy Clients</div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">AI Solutions</div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Client Satisfaction</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Butterfly -->
+      <img id="butterfly" src="./images/butterfly.gif" alt="Butterfly" style="width: 100px; height: auto; position: absolute; top: 50%; left: 10%;">
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 fw-bold">Premium Services</h2>
+          <p class="lead text-muted">Comprehensive solutions for modern businesses</p>
+        </div>
+        
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card h-100">
+              <div class="service-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <h3>AI & LLM Integration</h3>
+              <p>Custom AI agents, GPT integration, prompt engineering, and intelligent automation solutions tailored to your business needs.</p>
+              <ul class="list-unstyled mt-3">
+                <li><i class="fas fa-check text-success me-2"></i>Custom ChatGPT Solutions</li>
+                <li><i class="fas fa-check text-success me-2"></i>AI-Powered Analytics</li>
+                <li><i class="fas fa-check text-success me-2"></i>Intelligent Process Automation</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card h-100">
+              <div class="service-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3>Full-Stack Development</h3>
+              <p>Enterprise-grade web applications, mobile apps, and SAAS platforms built with cutting-edge technologies.</p>
+              <ul class="list-unstyled mt-3">
+                <li><i class="fas fa-check text-success me-2"></i>React/Next.js Applications</li>
+                <li><i class="fas fa-check text-success me-2"></i>Node.js/Python Backends</li>
+                <li><i class="fas fa-check text-success me-2"></i>Cloud-Native Architecture</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card h-100">
+              <div class="service-icon">
+                <i class="fas fa-comments"></i>
+              </div>
+              <h3>Intelligent Chatbots</h3>
+              <p>Advanced conversational AI solutions for customer service, sales automation, and internal operations.</p>
+              <ul class="list-unstyled mt-3">
+                <li><i class="fas fa-check text-success me-2"></i>Multi-Channel Support</li>
+                <li><i class="fas fa-check text-success me-2"></i>NLP & Sentiment Analysis</li>
+                <li><i class="fas fa-check text-success me-2"></i>CRM Integration</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card h-100">
+              <div class="service-icon">
+                <i class="fas fa-cloud"></i>
+              </div>
+              <h3>SAAS Development</h3>
+              <p>Scalable software-as-a-service platforms with subscription management, multi-tenancy, and analytics.</p>
+              <ul class="list-unstyled mt-3">
+                <li><i class="fas fa-check text-success me-2"></i>Subscription & Billing</li>
+                <li><i class="fas fa-check text-success me-2"></i>Multi-Tenant Architecture</li>
+                <li><i class="fas fa-check text-success me-2"></i>Advanced Analytics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card h-100">
+              <div class="service-icon">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <h3>Business Automation</h3>
+              <p>Streamline operations with custom automation solutions, workflow optimization, and system integration.</p>
+              <ul class="list-unstyled mt-3">
+                <li><i class="fas fa-check text-success me-2"></i>Workflow Automation</li>
+                <li><i class="fas fa-check text-success me-2"></i>API Integration</li>
+                <li><i class="fas fa-check text-success me-2"></i>Process Optimization</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card h-100">
+              <div class="service-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>Digital Marketing & SEO</h3>
+              <p>Data-driven marketing strategies, SEO optimization, and growth hacking for maximum ROI.</p>
+              <ul class="list-unstyled mt-3">
+                <li><i class="fas fa-check text-success me-2"></i>Technical SEO</li>
+                <li><i class="fas fa-check text-success me-2"></i>Content Strategy</li>
+                <li><i class="fas fa-check text-success me-2"></i>Performance Marketing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 fw-bold">Technical Expertise</h2>
+          <p class="lead text-muted">Cutting-edge technologies powering your success</p>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <h3 class="mb-4">AI & Machine Learning</h3>
+            <div class="tech-stack">
+              <span class="tech-badge">OpenAI GPT-4</span>
+              <span class="tech-badge">LangChain</span>
+              <span class="tech-badge">TensorFlow</span>
+              <span class="tech-badge">PyTorch</span>
+              <span class="tech-badge">Hugging Face</span>
+              <span class="tech-badge">Vector Databases</span>
+              <span class="tech-badge">RAG Systems</span>
+              <span class="tech-badge">Fine-tuning LLMs</span>
+            </div>
+          </div>
+          
+          <div class="col-lg-6 mb-4">
+            <h3 class="mb-4">Development Stack</h3>
+            <div class="tech-stack">
+              <span class="tech-badge">React/Next.js</span>
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">Python/Django</span>
+              <span class="tech-badge">TypeScript</span>
+              <span class="tech-badge">GraphQL</span>
+              <span class="tech-badge">PostgreSQL</span>
+              <span class="tech-badge">MongoDB</span>
+              <span class="tech-badge">Redis</span>
+            </div>
+          </div>
+          
+          <div class="col-lg-6 mb-4">
+            <h3 class="mb-4">Cloud & DevOps</h3>
+            <div class="tech-stack">
+              <span class="tech-badge">AWS</span>
+              <span class="tech-badge">Google Cloud</span>
+              <span class="tech-badge">Azure</span>
+              <span class="tech-badge">Docker</span>
+              <span class="tech-badge">Kubernetes</span>
+              <span class="tech-badge">CI/CD</span>
+              <span class="tech-badge">Terraform</span>
+              <span class="tech-badge">Serverless</span>
+            </div>
+          </div>
+          
+          <div class="col-lg-6 mb-4">
+            <h3 class="mb-4">Mobile & Cross-Platform</h3>
+            <div class="tech-stack">
+              <span class="tech-badge">React Native</span>
+              <span class="tech-badge">Flutter</span>
+              <span class="tech-badge">iOS/Swift</span>
+              <span class="tech-badge">Android/Kotlin</span>
+              <span class="tech-badge">PWA</span>
+              <span class="tech-badge">Electron</span>
+              <span class="tech-badge">Capacitor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 fw-bold">Transparent Pricing</h2>
+          <p class="lead text-muted">Choose the perfect package for your project</p>
+        </div>
+        
+        <div class="row g-4 align-items-center">
+          <!-- Starter Package -->
+          <div class="col-lg-4">
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h3 class="pricing-title">Starter MVP</h3>
+                <div class="pricing-price">€2,999</div>
+                <div class="pricing-duration">2-month delivery</div>
+              </div>
+              <ul class="pricing-features">
+                <li><i class="fas fa-check-circle"></i>Minimum Viable Product</li>
+                <li><i class="fas fa-check-circle"></i>Core Features Only</li>
+                <li><i class="fas fa-check-circle"></i>Basic UI/UX Design</li>
+                <li><i class="fas fa-check-circle"></i>Mobile Responsive</li>
+                <li><i class="fas fa-check-circle"></i>Basic API Integration</li>
+                <li><i class="fas fa-check-circle"></i>Deployment Setup</li>
+                <li><i class="fas fa-check-circle"></i>1 Month Support</li>
+              </ul>
+              <a href="https://alokknight.com/contact" class="cta-button w-100 text-center">Get Started</a>
+            </div>
+          </div>
+          
+          <!-- Professional Package -->
+          <div class="col-lg-4">
+            <div class="pricing-card featured">
+              <div class="pricing-header">
+                <h3 class="pricing-title">Professional</h3>
+                <div class="pricing-price">€5,999</div>
+                <div class="pricing-duration">4-month delivery</div>
+              </div>
+              <ul class="pricing-features">
+                <li><i class="fas fa-check-circle"></i>Full-Featured Application</li>
+                <li><i class="fas fa-check-circle"></i>Advanced UI/UX Design</li>
+                <li><i class="fas fa-check-circle"></i>AI/ML Integration</li>
+                <li><i class="fas fa-check-circle"></i>Payment Gateway</li>
+                <li><i class="fas fa-check-circle"></i>Admin Dashboard</li>
+                <li><i class="fas fa-check-circle"></i>Analytics & Reporting</li>
+                <li><i class="fas fa-check-circle"></i>3 Months Support</li>
+                <li><i class="fas fa-check-circle"></i>Performance Optimization</li>
+              </ul>
+              <a href="https://alokknight.com/contact" class="cta-button w-100 text-center">Get Started</a>
+            </div>
+          </div>
+          
+          <!-- Enterprise Package -->
+          <div class="col-lg-4">
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h3 class="pricing-title">Enterprise</h3>
+                <div class="pricing-price">€12,999</div>
+                <div class="pricing-duration">6-month delivery</div>
+              </div>
+              <ul class="pricing-features">
+                <li><i class="fas fa-check-circle"></i>Complete Platform Solution</li>
+                <li><i class="fas fa-check-circle"></i>Custom AI/LLM Models</li>
+                <li><i class="fas fa-check-circle"></i>Multi-tenant Architecture</li>
+                <li><i class="fas fa-check-circle"></i>Advanced Security</li>
+                <li><i class="fas fa-check-circle"></i>Scalable Infrastructure</li>
+                <li><i class="fas fa-check-circle"></i>Third-party Integrations</li>
+                <li><i class="fas fa-check-circle"></i>6 Months Support</li>
+                <li><i class="fas fa-check-circle"></i>Training & Documentation</li>
+              </ul>
+              <a href="https://alokknight.com/contact" class="cta-button w-100 text-center">Get Started</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-5">
+          <p class="text-muted">Need a custom solution? <a href="https://alokknight.com/contact" class="text-primary fw-bold">Contact us</a> for personalized pricing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 fw-bold">Our Process</h2>
+          <p class="lead text-muted">From concept to deployment in systematic steps</p>
+        </div>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>1. Discovery & Planning</h4>
+              <p>We analyze your requirements, define project scope, and create a detailed roadmap with milestones.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>2. Design & Prototyping</h4>
+              <p>Creating wireframes, UI/UX designs, and interactive prototypes for your approval.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>3. Development & Testing</h4>
+              <p>Agile development with regular updates, comprehensive testing, and quality assurance.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>4. Deployment & Support</h4>
+              <p>Smooth deployment, training, and ongoing support to ensure your success.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 fw-bold">Recent Projects</h2>
+          <p class="lead text-muted">Solutions that drive real business impact</p>
+        </div>
+        
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card">
+              <img src="./images/demo/ai-chatbot.jpg" class="img-fluid rounded mb-3" alt="AI Chatbot">
+              <h4>AI Customer Support Bot</h4>
+              <p>Reduced support tickets by 65% with intelligent automated responses</p>
+              <div class="tech-stack justify-content-start">
+                <span class="tech-badge small">GPT-4</span>
+                <span class="tech-badge small">LangChain</span>
+                <span class="tech-badge small">React</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card">
+              <img src="./images/demo/saas-platform.jpg" class="img-fluid rounded mb-3" alt="SAAS Platform">
+              <h4>B2B SAAS Platform</h4>
+              <p>Multi-tenant platform serving 10,000+ users with 99.9% uptime</p>
+              <div class="tech-stack justify-content-start">
+                <span class="tech-badge small">Next.js</span>
+                <span class="tech-badge small">AWS</span>
+                <span class="tech-badge small">PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card">
+              <img src="./images/demo/mobile-app.jpg" class="img-fluid rounded mb-3" alt="Mobile App">
+              <h4>E-commerce Mobile App</h4>
+              <p>Cross-platform app with AI recommendations, 4.8★ rating</p>
+              <div class="tech-stack justify-content-start">
+                <span class="tech-badge small">React Native</span>
+                <span class="tech-badge small">Node.js</span>
+                <span class="tech-badge small">ML</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-5">
+          <a href="#contact" class="cta-button">View All Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 fw-bold">Let's Build Something Amazing</h2>
+          <p class="lead text-muted">Ready to transform your ideas into reality?</p>
+        </div>
+        
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="service-card text-center">
+              <h3 class="mb-4">Start Your Project Today</h3>
+              <p class="mb-4">Whether you need an AI solution, a mobile app, or a complete digital transformation, we're here to help. Our team will work closely with you to deliver exceptional results.</p>
+              
+              <div class="row mb-4">
+                <div class="col-md-4">
+                  <div class="d-flex align-items-center justify-content-center mb-3">
+                    <i class="fas fa-envelope fa-2x text-primary me-3"></i>
+                    <div class="text-start">
+                      <small class="text-muted">Email</small>
+                      <p class="mb-0 fw-bold">alokpatel885@gmail.com</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-flex align-items-center justify-content-center mb-3">
+                    <i class="fas fa-phone fa-2x text-primary me-3"></i>
+                    <div class="text-start">
+                      <small class="text-muted">Phone</small>
+                      <p class="mb-0 fw-bold">+91 7897867722</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-flex align-items-center justify-content-center mb-3">
+                    <i class="fas fa-map-marker-alt fa-2x text-primary me-3"></i>
+                    <div class="text-start">
+                      <small class="text-muted">Location</small>
+                      <p class="mb-0 fw-bold">Lucknow, India</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <a href="https://alokknight.com/contact" class="cta-button">Start Your Project</a>
+              
+              <div class="mt-4">
+                <a href="https://github.com/alokknight" class="text-muted mx-2"><i class="fab fa-github fa-2x"></i></a>
+                <a href="https://linkedin.com/in/alokknight" class="text-muted mx-2"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://twitter.com/aalokknight" class="text-muted mx-2"><i class="fab fa-twitter fa-2x"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container text-center">
+        <p class="mb-0">© 2025 Alok Knight. All rights reserved. | <a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Terms of Service</a></p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Preloader
+      window.addEventListener('load', () => {
+        document.querySelector('.preloader').style.display = 'none';
+      });
+
+      // Navbar scroll effect
+      window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Active nav link on scroll
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          if (scrollY >= sectionTop) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').substring(1) === current) {
+            link.classList.add('active');
+          }
+        });
+      });
+
+      // Butterfly movement
+      const butterfly = document.getElementById('butterfly');
+      let mouseX = 0, mouseY = 0;
+      let butterflyX = 100, butterflyY = 300;
+      const speed = 0.05;
+      
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      function animateButterfly() {
+        const dx = mouseX - butterflyX;
+        const dy = mouseY - butterflyY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < 150) {
+          // Move away from cursor
+          butterflyX -= dx * speed;
+          butterflyY -= dy * speed;
+        } else {
+          // Random movement
+          butterflyX += (Math.random() - 0.5) * 2;
+          butterflyY += (Math.random() - 0.5) * 2;
+        }
+        
+        // Keep butterfly within viewport
+        butterflyX = Math.max(50, Math.min(window.innerWidth - 50, butterflyX));
+        butterflyY = Math.max(50, Math.min(window.innerHeight - 50, butterflyY));
+        
+        butterfly.style.left = butterflyX + 'px';
+        butterfly.style.top = butterflyY + 'px';
+        
+        requestAnimationFrame(animateButterfly);
+      }
+      
+      animateButterfly();
+
+      // Number counter animation
+      const counters = document.querySelectorAll('.stat-number');
+      const observerOptions = {
+        threshold: 0.5
+      };
+
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            const target = parseInt(counter.innerText);
+            let count = 0;
+            const increment = target / 50;
+            
+            const updateCounter = () => {
+              count += increment;
+              if (count < target) {
+                counter.innerText = Math.ceil(count) + (counter.innerText.includes('+') ? '+' : '');
+                requestAnimationFrame(updateCounter);
+              } else {
+                counter.innerText = target + (counter.innerText.includes('+') ? '+' : '');
+              }
+            };
+            
+            updateCounter();
+            counterObserver.unobserve(counter);
+          }
+        });
+      }, observerOptions);
+
+      counters.forEach(counter => {
+        counterObserver.observe(counter);
+      });
+    </script>
   </body>
 </html>

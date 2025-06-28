@@ -483,59 +483,53 @@
       /* Horizontal Scroll Section */
       .horizontal-scroll-wrapper {
         position: relative;
-        height: 100vh;
+        min-height: 80vh;
         overflow: hidden;
+        padding: 3rem 0;
       }
 
       .horizontal-scroll-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
+        position: relative;
         display: flex;
-        align-items: center;
-        transition: transform 0.5s ease;
+        gap: 2rem;
+        padding: 0 5%;
+        transition: transform 0.1s ease-out;
         will-change: transform;
       }
 
       .project-slide {
         flex: 0 0 auto;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
+        width: 80%;
+        max-width: 1000px;
       }
 
       .project-card-horizontal {
         background: white;
         border-radius: 20px;
-        padding: 3rem;
-        max-width: 1200px;
-        width: 90%;
+        padding: 2rem;
+        height: 100%;
         display: flex;
-        gap: 3rem;
+        gap: 2rem;
         align-items: center;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
       }
 
       .project-card-horizontal:hover {
-        transform: scale(1.02);
-        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
       }
 
       .project-image {
-        flex: 0 0 50%;
+        flex: 0 0 45%;
         border-radius: 15px;
         overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
       }
 
       .project-image img {
         width: 100%;
-        height: 400px;
+        height: 300px;
         object-fit: cover;
         transition: transform 0.3s ease;
       }
@@ -560,17 +554,17 @@
       }
 
       .project-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-weight: 800;
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
         color: var(--text-primary);
       }
 
       .project-description {
-        font-size: 1.125rem;
+        font-size: 1rem;
         color: var(--text-secondary);
-        margin-bottom: 2rem;
-        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
       }
 
       .project-tech {
@@ -678,7 +672,11 @@
       @media (max-width: 768px) {
         .project-card-horizontal {
           flex-direction: column;
-          padding: 2rem;
+          padding: 1.5rem;
+        }
+        
+        .project-slide {
+          width: 90%;
         }
         
         .project-image {
@@ -687,11 +685,11 @@
         }
         
         .project-image img {
-          height: 250px;
+          height: 200px;
         }
         
         .project-title {
-          font-size: 1.75rem;
+          font-size: 1.5rem;
         }
         
         .project-links {
@@ -700,6 +698,20 @@
         
         .scroll-hint {
           display: none;
+        }
+        
+        .project-stats {
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+        
+        .project-tech {
+          gap: 0.5rem;
+        }
+        
+        .tech-badge {
+          font-size: 0.75rem;
+          padding: 0.25rem 0.75rem;
         }
       }
 
@@ -738,10 +750,10 @@
         }
       }
 
-      /* Hide scrollbar during preloader */
-      body.loading {
+      /* Hide scrollbar during preloader (uncomment if using preloader) */
+      /* body.loading {
         overflow: hidden;
-      }
+      } */
     </style>
   </head>
 
@@ -1591,129 +1603,106 @@
       const slides = document.querySelectorAll('.project-slide');
       const scrollDots = document.querySelectorAll('.scroll-dot');
       
-      let currentSlide = 0;
-      let isHorizontalScrolling = false;
-      let hasCompletedHorizontalScroll = false;
+      let currentScroll = 0;
+      let maxScroll = 0;
+      let isHorizontalScrollActive = false;
       
-      // Calculate total width needed
-      const totalSlides = slides.length;
-      const slideWidth = window.innerWidth;
+      // Calculate max scroll
+      function calculateMaxScroll() {
+        const containerWidth = horizontalContainer.scrollWidth;
+        const viewportWidth = window.innerWidth;
+        maxScroll = containerWidth - viewportWidth + 100; // Add some padding
+      }
       
-      // Update dots
-      function updateDots() {
+      // Initialize
+      calculateMaxScroll();
+      window.addEventListener('resize', calculateMaxScroll);
+      
+      // Smooth horizontal scroll
+      function updateHorizontalScroll(delta) {
+        currentScroll += delta * 2; // Multiplier for scroll speed
+        currentScroll = Math.max(0, Math.min(currentScroll, maxScroll));
+        horizontalContainer.style.transform = `translateX(-${currentScroll}px)`;
+        
+        // Update dots based on visible project
+        const slideWidth = slides[0].offsetWidth + 32; // width + gap
+        const activeIndex = Math.min(Math.floor(currentScroll / slideWidth), slides.length - 1);
         scrollDots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === currentSlide);
+          dot.classList.toggle('active', index === activeIndex);
         });
       }
       
-      // Scroll to specific slide
-      function scrollToSlide(index) {
-        currentSlide = Math.max(0, Math.min(index, totalSlides - 1));
-        horizontalContainer.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-        updateDots();
+      // Handle scroll for horizontal section
+      let scrollTimeout;
+      
+      function handleScroll(e) {
+        const rect = horizontalSection.getBoundingClientRect();
+        const isInView = rect.top <= 100 && rect.bottom >= window.innerHeight - 100;
         
-        // Check if we've completed the horizontal scroll
-        if (currentSlide === totalSlides - 1) {
-          hasCompletedHorizontalScroll = true;
+        if (isInView && currentScroll < maxScroll && e.deltaY > 0) {
+          // Scrolling down and haven't reached the end
+          e.preventDefault();
+          updateHorizontalScroll(e.deltaY);
+          isHorizontalScrollActive = true;
+          
+          // Clear existing timeout
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            isHorizontalScrollActive = false;
+          }, 100);
+        } else if (isInView && currentScroll > 0 && e.deltaY < 0) {
+          // Scrolling up and not at the beginning
+          e.preventDefault();
+          updateHorizontalScroll(e.deltaY);
+          isHorizontalScrollActive = true;
+          
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            isHorizontalScrollActive = false;
+          }, 100);
         }
+        // If at the end or beginning, allow normal vertical scroll
       }
+      
+      // Add wheel event listener
+      window.addEventListener('wheel', handleScroll, { passive: false });
       
       // Handle dot clicks
       scrollDots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
-          scrollToSlide(index);
+          const slideWidth = slides[0].offsetWidth + 32;
+          currentScroll = index * slideWidth;
+          currentScroll = Math.min(currentScroll, maxScroll);
+          horizontalContainer.style.transform = `translateX(-${currentScroll}px)`;
+          updateHorizontalScroll(0); // Just update dots
         });
-      });
-      
-      // Handle scroll event for horizontal section
-      let lastScrollTop = 0;
-      let scrollAccumulator = 0;
-      
-      window.addEventListener('scroll', (e) => {
-        const sectionTop = horizontalSection.offsetTop;
-        const sectionBottom = sectionTop + horizontalSection.offsetHeight;
-        const scrollTop = window.pageYOffset;
-        const windowHeight = window.innerHeight;
-        
-        // Check if we're in the horizontal scroll section
-        if (scrollTop + windowHeight > sectionTop && scrollTop < sectionBottom) {
-          const scrollDirection = scrollTop > lastScrollTop ? 'down' : 'up';
-          
-          if (!hasCompletedHorizontalScroll && scrollDirection === 'down' && currentSlide < totalSlides - 1) {
-            e.preventDefault();
-            isHorizontalScrolling = true;
-            
-            // Accumulate scroll for smoother experience
-            scrollAccumulator += scrollTop - lastScrollTop;
-            
-            if (scrollAccumulator > 50) {
-              scrollToSlide(currentSlide + 1);
-              scrollAccumulator = 0;
-            }
-            
-            // Prevent vertical scroll
-            window.scrollTo(0, sectionTop - 100);
-          } else if (scrollDirection === 'up' && currentSlide > 0) {
-            e.preventDefault();
-            isHorizontalScrolling = true;
-            
-            scrollAccumulator += lastScrollTop - scrollTop;
-            
-            if (scrollAccumulator > 50) {
-              scrollToSlide(currentSlide - 1);
-              scrollAccumulator = 0;
-              hasCompletedHorizontalScroll = false;
-            }
-            
-            // Prevent vertical scroll
-            window.scrollTo(0, sectionTop - 100);
-          } else {
-            isHorizontalScrolling = false;
-          }
-        }
-        
-        lastScrollTop = scrollTop;
-      });
-      
-      // Handle mouse wheel for smoother horizontal scrolling
-      horizontalSection.addEventListener('wheel', (e) => {
-        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-          e.preventDefault();
-          
-          if (e.deltaY > 0 && currentSlide < totalSlides - 1) {
-            scrollToSlide(currentSlide + 1);
-          } else if (e.deltaY < 0 && currentSlide > 0) {
-            scrollToSlide(currentSlide - 1);
-            hasCompletedHorizontalScroll = false;
-          }
-        }
       });
       
       // Touch support for mobile
       let touchStartX = 0;
-      let touchEndX = 0;
+      let touchStartY = 0;
+      let touchStartScroll = 0;
       
       horizontalSection.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchStartScroll = currentScroll;
       });
       
-      horizontalSection.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-      });
-      
-      function handleSwipe() {
-        if (touchEndX < touchStartX - 50 && currentSlide < totalSlides - 1) {
-          scrollToSlide(currentSlide + 1);
-        } else if (touchEndX > touchStartX + 50 && currentSlide > 0) {
-          scrollToSlide(currentSlide - 1);
-          hasCompletedHorizontalScroll = false;
+      horizontalSection.addEventListener('touchmove', (e) => {
+        const touchX = e.touches[0].clientX;
+        const touchY = e.touches[0].clientY;
+        const deltaX = touchStartX - touchX;
+        const deltaY = touchStartY - touchY;
+        
+        // If horizontal swipe is stronger than vertical
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+          e.preventDefault();
+          currentScroll = touchStartScroll + deltaX;
+          currentScroll = Math.max(0, Math.min(currentScroll, maxScroll));
+          horizontalContainer.style.transform = `translateX(-${currentScroll}px)`;
+          updateHorizontalScroll(0); // Just update dots
         }
-      }
-      
-      // Update on window resize
-      window.addEventListener('resize', () => {
-        scrollToSlide(currentSlide);
       });
 
       // Number counter animation

@@ -49,6 +49,8 @@
         font-family: 'Inter', sans-serif;
         color: var(--text-primary);
         overflow-x: hidden;
+        margin: 0;
+        padding: 0;
       }
 
       /* Animated Background */
@@ -57,6 +59,9 @@
         min-height: 100vh;
         background: var(--dark-bg);
         overflow: hidden;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
       }
 
       .animated-bg {
@@ -87,6 +92,19 @@
         border-radius: 50%;
         animation: float 20s infinite;
         box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+      }
+
+      /* Remove white space from hero section sides */
+      #home {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      #home .container {
+        max-width: 100%;
+        padding: 0 15px;
       }
 
       @keyframes float {
@@ -758,30 +776,30 @@
           display: none;
         }
         
-        .project-nav-buttons {
-          display: none;
-        }
-        
-        .scroll-instruction {
-          display: none;
-        }
-        
+        /* Mobile project styles - use vertical scroll */
         .horizontal-scroll-wrapper {
-          min-height: 400px;
+          min-height: auto;
+          overflow: visible;
         }
         
         .horizontal-scroll-container {
-          min-height: 400px;
+          display: block !important;
+          width: 100% !important;
+          transform: none !important;
+          padding: 0 !important;
+        }
+        
+        .project-slide {
+          width: 100% !important;
+          margin-bottom: 2rem;
         }
         
         .project-card-horizontal {
           flex-direction: column;
           padding: 1.5rem;
           max-height: none;
-        }
-        
-        .project-slide {
-          width: 90%;
+          height: auto;
+          min-height: auto;
         }
         
         .project-image {
@@ -798,11 +816,21 @@
         }
         
         .project-links {
-          flex-direction: column;
+          flex-direction: row;
+          gap: 0.5rem;
         }
         
-        .scroll-hint {
-          display: none;
+        .project-link {
+          padding: 0.4rem 1rem;
+          font-size: 0.8rem;
+        }
+        
+        .project-nav-buttons,
+        .scroll-instruction,
+        .scroll-hint,
+        .scroll-indicator,
+        .scroll-progress {
+          display: none !important;
         }
         
         .project-stats {
@@ -919,9 +947,33 @@
       html {
         scroll-behavior: smooth;
       }
+      
+      /* Optimize for smooth scrolling performance */
+      * {
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+      }
+      
+      .horizontal-scroll-wrapper {
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+      }
 
       body.horizontal-scrolling {
         overflow: hidden;
+      }
+
+      .horizontal-scroll-wrapper {
+        position: relative;
+        overflow: hidden;
+        min-height: 600px;
+        width: 100%;
+        max-width: 100vw;
+        display: flex;
+        align-items: center;
       }
 
       .horizontal-scroll-wrapper::before,
@@ -950,12 +1002,13 @@
         display: flex;
         align-items: center;
         gap: 2rem;
-        padding: 0 5%;
-        min-height: 500px;
-        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 0 2rem;
+        height: 100%;
         will-change: transform;
         width: max-content;
         transform: translateX(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
       }
 
       .project-slide {
@@ -1283,9 +1336,6 @@
             </li>
           </ul>
           <a href="https://alokknight.com/contact" class="cta-button">Start Project</a>
-          <div class="text-center mb-3">
-            <p class="text-primary fw-bold"><i class="fas fa-hand-point-down me-2 animate-bounce"></i><strong>Scroll here to navigate through projects</strong> <i class="fas fa-hand-point-down ms-2 animate-bounce"></i></p>
-          </div>
         </div>
       </div>
     </nav>
@@ -1691,7 +1741,7 @@
         <div class="project-slide">
           <div class="project-card-horizontal">
             <div class="project-image">
-              <img src="./images/demo/ai-chatbot.jpg" alt="AI Customer Support Platform" onerror="this.src='https://via.placeholder.com/600x400/6366f1/ffffff?text=AI+Chatbot+Project'">
+              <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="AI Customer Support Platform">
             </div>
             <div class="project-details">
               <span class="project-category">AI/Machine Learning</span>
@@ -1733,7 +1783,7 @@
         <div class="project-slide">
           <div class="project-card-horizontal">
             <div class="project-image">
-              <img src="./images/demo/saas-platform.jpg" alt="B2B SAAS Platform" onerror="this.src='https://via.placeholder.com/600x400/8b5cf6/ffffff?text=SAAS+Platform'">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="B2B SAAS Platform">
             </div>
             <div class="project-details">
               <span class="project-category">SAAS Development</span>
@@ -1775,7 +1825,7 @@
         <div class="project-slide">
           <div class="project-card-horizontal">
             <div class="project-image">
-              <img src="./images/demo/mobile-app.jpg" alt="E-commerce Mobile App" onerror="this.src='https://via.placeholder.com/600x400/10b981/ffffff?text=Mobile+App'">
+              <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="E-commerce Mobile App">
             </div>
             <div class="project-details">
               <span class="project-category">Mobile Development</span>
@@ -1817,7 +1867,7 @@
         <div class="project-slide">
           <div class="project-card-horizontal">
             <div class="project-image">
-              <img src="./images/demo/automation.jpg" alt="Business Automation Platform" onerror="this.src='https://via.placeholder.com/600x400/f59e0b/ffffff?text=Automation+Platform'">
+              <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Business Automation Platform">
             </div>
             <div class="project-details">
               <span class="project-category">Automation & Integration</span>
@@ -1859,7 +1909,7 @@
         <div class="project-slide">
           <div class="project-card-horizontal">
             <div class="project-image">
-              <img src="./images/demo/analytics.jpg" alt="Analytics Dashboard" onerror="this.src='https://via.placeholder.com/600x400/ef4444/ffffff?text=Analytics+Dashboard'">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Analytics Dashboard">
             </div>
             <div class="project-details">
               <span class="project-category">Data & Analytics</span>
@@ -2232,13 +2282,23 @@
       
       animateButterfly();
 
-      // Horizontal scroll functionality - Fixed version
+      // Horizontal scroll functionality - Simplified and reliable
       document.addEventListener('DOMContentLoaded', () => {
+        // Check if mobile
+        const isMobile = window.innerWidth <= 768;
+        
+        if (isMobile) {
+          // On mobile, use normal vertical scroll
+          return;
+        }
+        
         const portfolioSection = document.querySelector('#portfolio');
         const scrollWrapper = document.querySelector('.horizontal-scroll-wrapper');
         const scrollContainer = document.querySelector('.horizontal-scroll-container');
         const projectSlides = document.querySelectorAll('.project-slide');
         const dots = document.querySelectorAll('.scroll-dot');
+        const scrollProgressBar = document.querySelector('.scroll-progress');
+        const navbar = document.querySelector('.navbar');
         
         if (!scrollContainer || projectSlides.length === 0) {
           console.error('Project scroll elements not found');
@@ -2247,180 +2307,312 @@
         
         let scrollPosition = 0;
         let maxScrollPosition = 0;
-        let isHorizontallyScrolling = false;
-        let scrollLocked = false;
+        let isHorizontalScrollActive = false;
+        let portfolioSectionY = 0;
         
-        // Calculate maximum scroll distance
-        const updateMaxScroll = () => {
-          const containerTotalWidth = scrollContainer.scrollWidth;
-          const viewportWidth = scrollWrapper.offsetWidth;
-          maxScrollPosition = Math.max(0, containerTotalWidth - viewportWidth);
+        // Calculate scroll dimensions
+        const calculateDimensions = () => {
+          const slideWidth = projectSlides[0].offsetWidth + 32;
+          const wrapperWidth = scrollWrapper.offsetWidth;
+          const totalWidth = slideWidth * projectSlides.length;
+          maxScrollPosition = Math.max(0, totalWidth - wrapperWidth);
+          portfolioSectionY = portfolioSection.offsetTop;
         };
         
-        updateMaxScroll();
-        window.addEventListener('resize', updateMaxScroll);
+        calculateDimensions();
+        window.addEventListener('resize', calculateDimensions);
         
-        // Apply scroll position
-        const applyScroll = (newPosition) => {
+        // Apply horizontal scroll with smooth animation
+        const applyHorizontalScroll = (newPosition, smooth = true) => {
           scrollPosition = Math.max(0, Math.min(newPosition, maxScrollPosition));
+          
+          // Update boundary states immediately
+          hasReachedStart = scrollPosition <= 0;
+          hasReachedEnd = scrollPosition >= maxScrollPosition;
+          
+          if (smooth) {
+            scrollContainer.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+          } else {
+            scrollContainer.style.transition = 'none';
+          }
+          
           scrollContainer.style.transform = `translateX(-${scrollPosition}px)`;
           
-          // Update active dot
-          if (projectSlides.length > 0 && dots.length > 0) {
-            const slideWidth = projectSlides[0].offsetWidth + 32; // including gap
+          // Update progress bar
+          if (scrollProgressBar) {
+            const progress = maxScrollPosition > 0 ? (scrollPosition / maxScrollPosition) * 100 : 0;
+            scrollProgressBar.style.width = `${progress}%`;
+          }
+          
+          // Update dots
+          if (dots.length > 0) {
+            const slideWidth = projectSlides[0].offsetWidth + 32;
             const currentIndex = Math.round(scrollPosition / slideWidth);
-            
             dots.forEach((dot, idx) => {
-              dot.classList.toggle('active', idx === currentIndex);
+              dot.classList.toggle('active', idx === Math.min(currentIndex, dots.length - 1));
             });
           }
           
-          // Hide/show scroll hint
-          const hint = document.querySelector('.scroll-hint');
-          if (hint) {
-            hint.style.opacity = scrollPosition >= maxScrollPosition - 10 ? '0' : '1';
+          // Update navigation buttons if they exist
+          if (typeof updateNavButtons === 'function') {
+            updateNavButtons();
           }
         };
         
-        // Main scroll handler
-        const handleWheelScroll = (event) => {
-          if (!portfolioSection || scrollLocked) return;
+        // Check if we should start horizontal scrolling (only at the END of section)
+        const shouldStartHorizontalScroll = () => {
+          const rect = portfolioSection.getBoundingClientRect();
+          const viewportHeight = window.innerHeight;
           
-          const sectionBounds = portfolioSection.getBoundingClientRect();
-          const wrapperBounds = scrollWrapper.getBoundingClientRect();
+          // Activate horizontal scroll only when user reaches the BOTTOM of the section
+          // This means the section bottom is at or above the viewport bottom
+          return rect.bottom <= viewportHeight + 50; // 50px buffer
+        };
+        
+        // Check if pointer is over a project card
+        const isPointerOverCard = (e) => {
+          const elementUnderPointer = document.elementFromPoint(e.clientX, e.clientY);
+          return elementUnderPointer && (
+            elementUnderPointer.closest('.project-card-horizontal') ||
+            elementUnderPointer.closest('.project-slide') ||
+            elementUnderPointer.closest('.horizontal-scroll-wrapper')
+          );
+        };
+        
+        // Throttle function for smoother scrolling
+        let scrollTimeout;
+        let isScrolling = false;
+        
+        // Track scroll state
+        let hasReachedStart = true;
+        let hasReachedEnd = false;
+        let isInProjectsEndZone = false;
+        let horizontalScrollStarted = false;
+        
+        // Main scroll handler with your exact requirements
+        const handleScroll = (e) => {
+          const shouldStart = shouldStartHorizontalScroll();
+          const scrollDirection = e.deltaY > 0 ? 'down' : 'up';
+          const pointerOnCard = isPointerOverCard(e);
           
-          // Check if we're in the portfolio section
-          const isInSection = sectionBounds.top < window.innerHeight && sectionBounds.bottom > 0;
-          const isInScrollArea = wrapperBounds.top < window.innerHeight * 0.7 && wrapperBounds.bottom > window.innerHeight * 0.3;
+          // Update boundary states
+          hasReachedStart = scrollPosition <= 0;
+          hasReachedEnd = scrollPosition >= maxScrollPosition;
           
-          if (isInSection && isInScrollArea) {
-            const scrollDelta = event.deltaY;
-            
-            // Determine if we should handle horizontal scroll
-            const shouldScrollHorizontally = 
-              (scrollDelta > 0 && scrollPosition < maxScrollPosition) || 
-              (scrollDelta < 0 && scrollPosition > 0);
-            
-            if (shouldScrollHorizontally) {
-              event.preventDefault();
-              event.stopPropagation();
-              
-              // Apply horizontal scroll
-              const scrollSpeed = 1.2;
-              const newPosition = scrollPosition + (scrollDelta * scrollSpeed);
-              applyScroll(newPosition);
-              
-              // Lock vertical scroll briefly
-              isHorizontallyScrolling = true;
-              scrollLocked = true;
-              
-              setTimeout(() => {
-                scrollLocked = false;
-                isHorizontallyScrolling = false;
-              }, 50);
-              
-              return false;
+          // Case 1: Pointer is on card - horizontal scroll works
+          if (pointerOnCard && (isHorizontalScrollActive || shouldStart)) {
+            if (!isHorizontalScrollActive) {
+              isHorizontalScrollActive = true;
+              document.body.style.overflow = 'hidden';
             }
+            
+            e.preventDefault();
+            
+            let scrollAmount = Math.abs(e.deltaY);
+            if (scrollAmount > 100) scrollAmount = scrollAmount * 0.8;
+            else scrollAmount = scrollAmount * 1.2;
+            
+            if (scrollDirection === 'down') {
+              if (!hasReachedEnd) {
+                applyHorizontalScroll(scrollPosition + scrollAmount, false);
+              }
+            } else {
+              if (!hasReachedStart) {
+                applyHorizontalScroll(scrollPosition - scrollAmount, false);
+              }
+            }
+            return;
           }
+          
+          // Case 2: User reaches END of projects section (scrolling down)
+          if (shouldStart && scrollDirection === 'down' && !horizontalScrollStarted) {
+            // Start horizontal scroll from the beginning (show first project)
+            horizontalScrollStarted = true;
+            isHorizontalScrollActive = true;
+            isInProjectsEndZone = true;
+            document.body.style.overflow = 'hidden';
+            
+            // Reset to start of projects
+            applyHorizontalScroll(0, false);
+            
+            e.preventDefault();
+            return;
+          }
+          
+          // Case 3: In horizontal scroll mode (going through projects)
+          if (isInProjectsEndZone && isHorizontalScrollActive) {
+            e.preventDefault();
+            
+            let scrollAmount = Math.abs(e.deltaY);
+            if (scrollAmount > 100) scrollAmount = scrollAmount * 0.8;
+            else scrollAmount = scrollAmount * 1.2;
+            
+            if (scrollDirection === 'down') {
+              // Scroll right through projects
+              if (!hasReachedEnd) {
+                applyHorizontalScroll(scrollPosition + scrollAmount, false);
+              } else {
+                // Reached end of projects, continue vertical scroll down
+                isHorizontalScrollActive = false;
+                isInProjectsEndZone = false;
+                horizontalScrollStarted = false;
+                document.body.style.overflow = '';
+                return; // Allow vertical scroll
+              }
+            } else {
+              // Scroll left (back through projects)
+              if (!hasReachedStart) {
+                applyHorizontalScroll(scrollPosition - scrollAmount, false);
+              } else {
+                // Reached start of projects, continue vertical scroll up
+                isHorizontalScrollActive = false;
+                isInProjectsEndZone = false;
+                horizontalScrollStarted = false;
+                document.body.style.overflow = '';
+                return; // Allow vertical scroll
+              }
+            }
+            return;
+          }
+          
+          // Case 4: Normal vertical scrolling
+          isHorizontalScrollActive = false;
+          document.body.style.overflow = '';
         };
         
-        // Attach scroll listener
-        window.addEventListener('wheel', handleWheelScroll, { passive: false });
-        scrollWrapper.addEventListener('wheel', handleWheelScroll, { passive: false });
+        // Attach wheel listener
+        window.addEventListener('wheel', handleScroll, { passive: false });
+        
+        // Navigation buttons
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'project-nav-btn';
+        prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+        prevBtn.style.cssText = `
+          position: absolute;
+          left: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          background: white;
+          border: 2px solid #6366f1;
+          color: #6366f1;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          cursor: pointer;
+          z-index: 10;
+          transition: all 0.3s ease;
+        `;
+        
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'project-nav-btn';
+        nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+        nextBtn.style.cssText = `
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          background: white;
+          border: 2px solid #6366f1;
+          color: #6366f1;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          cursor: pointer;
+          z-index: 10;
+          transition: all 0.3s ease;
+        `;
+        
+        prevBtn.onclick = () => {
+          const slideWidth = projectSlides[0].offsetWidth + 32;
+          applyHorizontalScroll(scrollPosition - slideWidth, true);
+        };
+        
+        nextBtn.onclick = () => {
+          const slideWidth = projectSlides[0].offsetWidth + 32;
+          applyHorizontalScroll(scrollPosition + slideWidth, true);
+        };
+        
+        scrollWrapper.appendChild(prevBtn);
+        scrollWrapper.appendChild(nextBtn);
+        
+        // Navigation button update function
+        const updateNavButtons = () => {
+          prevBtn.disabled = hasReachedStart;
+          nextBtn.disabled = hasReachedEnd;
+          prevBtn.style.opacity = hasReachedStart ? '0.5' : '1';
+          nextBtn.style.opacity = hasReachedEnd ? '0.5' : '1';
+        };
+        
+        // Scroll instruction
+        const instruction = document.createElement('div');
+        instruction.innerHTML = 'Scroll to navigate through projects';
+        instruction.style.cssText = `
+          position: absolute;
+          top: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(255, 255, 255, 0.9);
+          padding: 10px 20px;
+          border-radius: 25px;
+          color: #6366f1;
+          font-weight: 600;
+          z-index: 10;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        `;
+        scrollWrapper.appendChild(instruction);
         
         // Dot navigation
         dots.forEach((dot, index) => {
           dot.addEventListener('click', () => {
-            if (projectSlides.length > 0) {
-              const slideWidth = projectSlides[0].offsetWidth + 32;
-              const targetPosition = index * slideWidth;
-              applyScroll(targetPosition);
-            }
+            const slideWidth = projectSlides[0].offsetWidth + 32;
+            applyHorizontalScroll(index * slideWidth, true);
           });
         });
         
-        // Touch/swipe support
-        let touchStart = { x: 0, y: 0 };
-        let touchInitialScroll = 0;
+        // Touch support for mobile
+        let touchStartX = 0;
+        let touchStartScroll = 0;
         
         scrollWrapper.addEventListener('touchstart', (e) => {
-          touchStart.x = e.touches[0].clientX;
-          touchStart.y = e.touches[0].clientY;
-          touchInitialScroll = scrollPosition;
+          touchStartX = e.touches[0].clientX;
+          touchStartScroll = scrollPosition;
         });
         
         scrollWrapper.addEventListener('touchmove', (e) => {
-          const touchCurrent = {
-            x: e.touches[0].clientX,
-            y: e.touches[0].clientY
-          };
-          
-          const deltaX = touchStart.x - touchCurrent.x;
-          const deltaY = touchStart.y - touchCurrent.y;
-          
-          // If horizontal movement is greater
-          if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
-            e.preventDefault();
-            const newPosition = touchInitialScroll + deltaX;
-            applyScroll(newPosition);
-          }
+          const deltaX = touchStartX - e.touches[0].clientX;
+          applyHorizontalScroll(touchStartScroll + deltaX, false);
         });
         
-        // Mouse drag support
-        let mouseDown = false;
-        let mouseStart = 0;
-        let mouseInitialScroll = 0;
+        // Mouse drag
+        let isDragging = false;
+        let dragStartX = 0;
+        let dragStartScroll = 0;
         
         scrollWrapper.addEventListener('mousedown', (e) => {
-          mouseDown = true;
-          mouseStart = e.clientX;
-          mouseInitialScroll = scrollPosition;
+          if (e.target.closest('button') || e.target.closest('.scroll-dot')) return;
+          isDragging = true;
+          dragStartX = e.clientX;
+          dragStartScroll = scrollPosition;
           scrollWrapper.style.cursor = 'grabbing';
-          e.preventDefault();
         });
         
         window.addEventListener('mousemove', (e) => {
-          if (!mouseDown) return;
-          
-          const deltaX = mouseStart - e.clientX;
-          const newPosition = mouseInitialScroll + deltaX;
-          applyScroll(newPosition);
+          if (!isDragging) return;
+          const deltaX = dragStartX - e.clientX;
+          applyHorizontalScroll(dragStartScroll + deltaX, false);
         });
         
         window.addEventListener('mouseup', () => {
-          mouseDown = false;
+          isDragging = false;
           scrollWrapper.style.cursor = 'grab';
         });
         
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-          const sectionBounds = portfolioSection.getBoundingClientRect();
-          const isInView = sectionBounds.top < window.innerHeight && sectionBounds.bottom > 0;
-          
-          if (isInView) {
-            if (e.key === 'ArrowRight') {
-              e.preventDefault();
-              applyScroll(scrollPosition + 200);
-            } else if (e.key === 'ArrowLeft') {
-              e.preventDefault();
-              applyScroll(scrollPosition - 200);
-            }
-          }
-        });
+        // Initialize
+        applyHorizontalScroll(0);
+        scrollWrapper.style.cursor = 'grab';
+        scrollWrapper.style.position = 'relative';
         
-        // Test button for debugging
-        const testBtn = document.createElement('button');
-        testBtn.textContent = 'Test Scroll →';
-        testBtn.style.cssText = 'position: absolute; top: 10px; right: 10px; z-index: 100; padding: 10px; background: #6366f1; color: white; border: none; border-radius: 5px; cursor: pointer;';
-        testBtn.onclick = () => {
-          console.log('Test scroll clicked. Current:', scrollPosition, 'Max:', maxScrollPosition);
-          applyScroll(scrollPosition + 200);
-        };
-        scrollWrapper.appendChild(testBtn);
-        
-        // Initialize and log status
-        applyScroll(0);
-        console.log('Horizontal scroll initialized. Projects:', projectSlides.length, 'Max scroll:', maxScrollPosition);
+        console.log('Horizontal scroll initialized with', projectSlides.length, 'projects');
       });
 
       // Number counter animation
